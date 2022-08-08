@@ -1,0 +1,4 @@
+Dlazdice>
+Lava spodna
+	x = -11 , y = -4 , z = 0
+				rozdiel v y = +2.8

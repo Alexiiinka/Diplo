@@ -1,0 +1,5 @@
+ruzova = ef476f
+zlta = ffd166
+zelena = 06d6a0
+modra = 118ab2
+tmava = 073b4c
