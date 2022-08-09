@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class sceneScript : MonoBehaviour
 {
@@ -10,17 +11,20 @@ public class sceneScript : MonoBehaviour
     float startPointX = -11.9f, endPointX = 12.0f;
     BoxCollider2D sizeOfCard;
     public bool canMove = true;
-    private List<int> instructs; //1-6> pocet opakovani, 7-zac. opak, 8-koniec opak., 10-fd, 11-right, 12-left
+    public List<int> instructs; //1-6> pocet opakovani, 7-zac. opak, 8-koniec opak., 10-fd, 11-right, 12-left
     public int indexOfInstructs = 0;
     public List<int> cycleRunning, cycleRunning2; //2 len aby som si niekde drzala hodnoty az do vykonania instrukcii
     public bool needNumberInCycle = false;
     trashMove trashSc;
+    //private checkSpace checkingSpaceScript;
+    //public GameObject checker;
 
     // Start is called before the first frame update
     void Start()
     {
         startPointX = startingPoint[0];
         trashSc = GameObject.Find("Kos").GetComponent<trashMove>();
+        //checkingSpaceScript = checker.GetComponent<checkSpace>();
     }
 
     private void canTrashMove()
@@ -120,7 +124,6 @@ public class sceneScript : MonoBehaviour
         {
             if (cycleRunning.Count == 0)
             {
-                Debug.Log("IstNull");
                 putRepeatCard();
                 indexOfInstructs = 0;
                 cycleRunning = new List<int>();
@@ -150,19 +153,49 @@ public class sceneScript : MonoBehaviour
         if (cycleRunning.Count == 0)
         {
             canMove = true;
-            RepeatInstructions(0);
-            instructs.Clear();
-            cycleRunning2.Clear();
+            StartCoroutine(RepeatInstructions(0));
         }
     }
-    private void RepeatInstructions(int indexOfRepeat)
-    {
+
+    private IEnumerator RepeatInstructions(int indexOfRepeat)
+    {   
+        TurnButtonsUnactive();
         for (int i = 0; i < cycleRunning2[indexOfRepeat]; i++)
         {
-            Debug.Log(i);
-            if(instructs[indexOfInstructs] == 10){trashSc.moveFd();}
-            if(instructs[indexOfInstructs] == 11){trashSc.rightRotate();}
-            if(instructs[indexOfInstructs] == 12){trashSc.leftRotate();}
+            //while (indexOfInstructs < instructs.Count)
+            while (instructs[indexOfInstructs] != 8)
+            {
+                if(instructs[indexOfInstructs] == 10){trashSc.moveFd();}
+                if(instructs[indexOfInstructs] == 11){trashSc.rightRotate();}
+                if(instructs[indexOfInstructs] == 12){trashSc.leftRotate();}  
+                if(instructs[indexOfInstructs] == 7)
+                {   
+                    StartCoroutine(RepeatInstructions(indexOfRepeat+1));
+                }  
+                indexOfInstructs++;
+                yield return new WaitForSeconds( 0.3f );
+                
+            }
+            indexOfInstructs = 0;
+        }
+        instructs.Clear();
+        cycleRunning2.Clear();
+        TurnButtonsActive();
+        
+    }
+
+    private void TurnButtonsActive()
+    {
+        foreach (string butt in new string[] {"b_turnRight","b_turnLeft","b_forward","b_repeat","b_stopRepeat","b_one","b_two","b_three","b_four","b_five","b_six"})
+        {
+            GameObject.Find(butt).GetComponent<Button>().interactable = true;
+        }
+    }
+    private void TurnButtonsUnactive()
+    {
+        foreach (string butt in new string[] {"b_turnRight","b_turnLeft","b_forward","b_repeat","b_stopRepeat","b_one","b_two","b_three","b_four","b_five","b_six"})
+        {
+            GameObject.Find(butt).GetComponent<Button>().interactable = false;
         }
     }
 }

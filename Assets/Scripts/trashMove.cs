@@ -29,7 +29,7 @@ public class trashMove : MonoBehaviour
 
     public void moveFd()
     {
-        if (scriptSc.canMove)
+        if (scriptSc.canMove && checkingSpaceScript.freeSpace)
         {
             newPos = trashRb.position + transform.up * moveDistance;
             if (newPos.x < maxLeft || newPos.x > maxRight  || newPos.y < maxDown || newPos.y > maxUp || !checkingSpaceScript.freeSpace)

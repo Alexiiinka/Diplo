@@ -2248,6 +2248,7 @@ MonoBehaviour:
   distanceForNumber: 3.2
   tuningOfBigRepeatCard: 1.6
   canMove: 1
+  instructs: 
   indexOfInstructs: 0
   cycleRunning: 
   cycleRunning2: 
