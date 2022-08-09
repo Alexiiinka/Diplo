@@ -328,7 +328,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 84630348}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1011556849}
+        m_TargetAssemblyTypeName: sceneScript, Assembly-CSharp
+        m_MethodName: PutFive
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &84630348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1443,7 +1455,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 629344731}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1011556849}
+        m_TargetAssemblyTypeName: sceneScript, Assembly-CSharp
+        m_MethodName: PutTwo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &629344731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1564,7 +1588,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 697075933}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1011556849}
+        m_TargetAssemblyTypeName: sceneScript, Assembly-CSharp
+        m_MethodName: PutFour
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &697075933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2034,99 +2070,6 @@ Transform:
   m_Father: {fileID: 826748290}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &785644939
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 785644940}
-  - component: {fileID: 785644941}
-  m_Layer: 0
-  m_Name: Spot Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &785644940
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 785644939}
-  m_LocalRotation: {x: -0.056958687, y: -0.025006594, z: 0.0021507142, w: 0.998061}
-  m_LocalPosition: {x: 10.78, y: -7.67, z: -8.01}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1114607005}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: -6.522, y: -2.894, z: 0.412}
---- !u!108 &785644941
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 785644939}
-  m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 0
-  m_Shape: 0
-  m_Color: {r: 0.35138035, g: 0.78431374, b: 0.18039213, a: 1}
-  m_Intensity: 100
-  m_Range: 9.81878
-  m_SpotAngle: 79.04937
-  m_InnerSpotAngle: 20.526226
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 1
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
 --- !u!1 &826748289
 GameObject:
   m_ObjectHideFlags: 0
@@ -2302,7 +2245,13 @@ MonoBehaviour:
   sixPf: {fileID: 6483152625767631789, guid: b925c067c4065524f80986cf22b48c47, type: 3}
   startingPoint: {x: -11.93, y: -6.43, z: -6}
   distanceBetween: 0.05
+  distanceForNumber: 3.2
+  tuningOfBigRepeatCard: 1.6
   canMove: 1
+  indexOfInstructs: 0
+  cycleRunning: 
+  cycleRunning2: 
+  needNumberInCycle: 0
 --- !u!4 &1011556850
 Transform:
   m_ObjectHideFlags: 0
@@ -2771,7 +2720,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1060633052}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1011556849}
+        m_TargetAssemblyTypeName: sceneScript, Assembly-CSharp
+        m_MethodName: PutOne
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1060633052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2988,7 +2949,6 @@ Transform:
   - {fileID: 1226726637}
   - {fileID: 1161486779}
   - {fileID: 344409582}
-  - {fileID: 785644940}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3074,7 +3034,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1126241707}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1011556849}
+        m_TargetAssemblyTypeName: sceneScript, Assembly-CSharp
+        m_MethodName: PutSix
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1126241707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4650,7 +4622,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1688653551}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1011556849}
+        m_TargetAssemblyTypeName: sceneScript, Assembly-CSharp
+        m_MethodName: RepeatCycle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1688653551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4771,7 +4755,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1889973726}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1011556849}
+        m_TargetAssemblyTypeName: sceneScript, Assembly-CSharp
+        m_MethodName: StopRepeat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1889973726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4892,7 +4888,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1978953433}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1011556849}
+        m_TargetAssemblyTypeName: sceneScript, Assembly-CSharp
+        m_MethodName: PutThree
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1978953433
 MonoBehaviour:
   m_ObjectHideFlags: 0
