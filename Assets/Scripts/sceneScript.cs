@@ -11,9 +11,9 @@ public class sceneScript : MonoBehaviour
     float startPointX = -11.9f, endPointX = 12.0f;
     BoxCollider2D sizeOfCard;
     public bool canMove = true;
-    public List<int> instructs; //1-6> pocet opakovani, 7-zac. opak, 8-koniec opak., 10-fd, 11-right, 12-left
-    public int indexOfInstructs = 0;
-    public List<int> cycleRunning, cycleRunning2; //2 len aby som si niekde drzala hodnoty az do vykonania instrukcii
+    public List<int> instructs; //-- zapis instrukcii -- 1-6> pocet opakovani, 7-zac. opak, 8-koniec opak., 10-fd, 11-right, 12-left
+    public List<int> indexOfInstructs; //na kolkej sme instrukcii
+    public List<int> cycleRunning, cycleRunning2; //cyc2 len aby som si niekde drzala hodnoty az do vykonania instrukcii
     public bool needNumberInCycle = false;
     trashMove trashSc;
     //private checkSpace checkingSpaceScript;
@@ -25,6 +25,10 @@ public class sceneScript : MonoBehaviour
         startPointX = startingPoint[0];
         trashSc = GameObject.Find("Kos").GetComponent<trashMove>();
         //checkingSpaceScript = checker.GetComponent<checkSpace>();
+        cycleRunning = new List<int>();
+        cycleRunning2 = new List<int>();
+        instructs = new List<int>();
+        indexOfInstructs = new List<int>();
     }
 
     private void canTrashMove()
@@ -86,6 +90,10 @@ public class sceneScript : MonoBehaviour
         Instantiate(repeatPf, new Vector3(startPointX, startingPoint[1], startingPoint[2]+0.1f), repeatPf.transform.rotation);
         sizeOfCard = repeatPf.GetComponent<BoxCollider2D>();
         startPointX += sizeOfCard.size[0]/2.5f - distanceForNumber; //doladenie pre polozenie cisla do OPAKUJ karticky
+        if (cycleRunning.Count != 0)
+            {
+                instructs.Add(7);
+            } 
         canTrashMove();  
     }
     public void putStopCard()
@@ -125,9 +133,9 @@ public class sceneScript : MonoBehaviour
             if (cycleRunning.Count == 0)
             {
                 putRepeatCard();
-                indexOfInstructs = 0;
-                cycleRunning = new List<int>();
-                instructs = new List<int>();
+                cycleRunning.Clear();
+                cycleRunning2.Clear();
+                instructs.Clear();
                 cycleRunning.Add(55);
                 cycleRunning2.Add(55);
                 needNumberInCycle = true;
@@ -162,25 +170,44 @@ public class sceneScript : MonoBehaviour
         TurnButtonsUnactive();
         for (int i = 0; i < cycleRunning2[indexOfRepeat]; i++)
         {
-            //while (indexOfInstructs < instructs.Count)
-            while (instructs[indexOfInstructs] != 8)
+            if (indexOfRepeat != 0)
             {
-                if(instructs[indexOfInstructs] == 10){trashSc.moveFd();}
-                if(instructs[indexOfInstructs] == 11){trashSc.rightRotate();}
-                if(instructs[indexOfInstructs] == 12){trashSc.leftRotate();}  
-                if(instructs[indexOfInstructs] == 7)
-                {   
-                    StartCoroutine(RepeatInstructions(indexOfRepeat+1));
-                }  
-                indexOfInstructs++;
-                yield return new WaitForSeconds( 0.3f );
-                
+                indexOfInstructs[indexOfRepeat] = indexOfInstructs[indexOfRepeat-1]+1;
             }
-            indexOfInstructs = 0;
+            else
+            {
+                indexOfInstructs.Clear();
+                indexOfInstructs.Add(0);
+            }
+            Debug.Log(indexOfRepeat);
+            while (instructs[indexOfInstructs[indexOfRepeat]] != 8)
+            {   yield return new WaitForSeconds( 0.5f );
+                if(instructs[indexOfInstructs[indexOfRepeat]] == 10){trashSc.moveFd();}
+                if(instructs[indexOfInstructs[indexOfRepeat]] == 11){trashSc.rightRotate();}
+                if(instructs[indexOfInstructs[indexOfRepeat]] == 12){trashSc.leftRotate();}  
+                if(instructs[indexOfInstructs[indexOfRepeat]] == 7)
+                {   
+                    indexOfInstructs.Add((indexOfInstructs[indexOfRepeat]+1));
+                    yield return StartCoroutine(RepeatInstructions(indexOfRepeat+1));
+                }
+                else
+                {
+                    indexOfInstructs[indexOfRepeat]++;
+                    yield return new WaitForSeconds( 0.5f );
+                }     
+            }
         }
-        instructs.Clear();
-        cycleRunning2.Clear();
-        TurnButtonsActive();
+
+        if (indexOfRepeat != 0)
+            {
+                indexOfInstructs[indexOfRepeat-1] = indexOfInstructs[indexOfRepeat]+1;
+            }
+        if (indexOfRepeat == 0)
+        {
+            instructs.Clear();
+            cycleRunning2.Clear();
+            TurnButtonsActive();
+        }
         
     }
 
