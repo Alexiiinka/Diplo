@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class sceneScript : MonoBehaviour
 {
+    public bool planned = false;
+    private bool plannedReserve = false;
     public GameObject fdPf, ltPf, rtPf, repeatPf, stopRepPf, repeatPfv, stopRepPfv, onePf, twoPf, threePf, fourPf, fivePf, sixPf ; //forwardPrefab etc.. 
     public Vector3 startingPoint = new Vector3(-11.93f, -6.43f, -6.0f);
     public float distanceBetween = 1.1f, distanceForNumber = 2.0f, tuningOfBigRepeatCard = 1.5f, maxXforRepeat = 10.34f;
@@ -18,6 +21,7 @@ public class sceneScript : MonoBehaviour
     trashMove trashSc;
     public Sprite repeatButt,repeatButtv, stopButt, stopButtv;
     public Button b_RepeatButt, b_StopButt;
+    public GameObject panel;
     //private checkSpace checkingSpaceScript;
     //public GameObject checker;
 
@@ -31,6 +35,11 @@ public class sceneScript : MonoBehaviour
         cycleRunning2 = new List<int>();
         instructs = new List<int>();
         indexOfInstructs = new List<int>();
+        plannedReserve = planned;
+        if (planned)
+        {
+         RepeatCycle();   
+        }
     }
 
     private void canTrashMove()
@@ -144,8 +153,19 @@ public class sceneScript : MonoBehaviour
     }
 
     public void RepeatCycle()
-    {
-        if (startPointX < endPointX && needNumberInCycle == false && startPointX < maxXforRepeat)
+    {   if (planned == true)
+        {
+            planned = false;
+            cycleRunning.Clear();
+            cycleRunning2.Clear();
+            instructs.Clear();
+            cycleRunning.Add(55);
+            cycleRunning2.Add(55);
+            canMove = false;
+            cycleRunning[cycleRunning.Count-1] = 1; //for 1 cycle
+            cycleRunning2[cycleRunning2.Count-1] = 1;
+        }
+        else if (startPointX < endPointX && needNumberInCycle == false && startPointX < maxXforRepeat)
         {
             if (cycleRunning.Count == 0)
             {
@@ -181,16 +201,19 @@ public class sceneScript : MonoBehaviour
     {
         if (startPointX < endPointX && (cycleRunning.Count != 0) && needNumberInCycle == false)
         {
-            putStopCard();
-            instructs.Add(8);
-            cycleRunning.RemoveAt(cycleRunning.Count-1);
-            if (b_RepeatButt.GetComponent<Image>().sprite.name == "repeat_withoutSp")
+            if ((cycleRunning.Count == 1 && !plannedReserve) || cycleRunning.Count > 1)
             {
-                b_StopButt.GetComponent<Image>().sprite = stopButt;
-            }
-            else
-            {
-                b_StopButt.GetComponent<Image>().sprite = stopButtv;
+                putStopCard();
+                instructs.Add(8);
+                cycleRunning.RemoveAt(cycleRunning.Count-1);
+                if (b_RepeatButt.GetComponent<Image>().sprite.name == "repeat_withoutSp")
+                {
+                    b_StopButt.GetComponent<Image>().sprite = stopButt;
+                }
+                else
+                {
+                    b_StopButt.GetComponent<Image>().sprite = stopButtv;
+                }   
             }
         }
         if (cycleRunning.Count == 0 && cycleRunning2.Count != 0)
@@ -241,7 +264,7 @@ public class sceneScript : MonoBehaviour
         {
             instructs.Clear();
             cycleRunning2.Clear();
-            TurnButtonsActive();
+            if (!plannedReserve){TurnButtonsActive();}
         }
         
     }
@@ -259,5 +282,26 @@ public class sceneScript : MonoBehaviour
         {
             GameObject.Find(butt).GetComponent<Button>().interactable = false;
         }
+    }
+
+    public void playInstructs()
+    {
+        instructs.Add(8);
+        cycleRunning.RemoveAt(cycleRunning.Count-1);
+        if (cycleRunning.Count == 0 && cycleRunning2.Count != 0)
+        {
+            canMove = true;
+            TurnButtonsUnactive();
+            StartCoroutine(RepeatInstructions(0));
+           
+        }
+        else{
+            panel.SetActive(true);
+        }
+    }
+
+    public void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

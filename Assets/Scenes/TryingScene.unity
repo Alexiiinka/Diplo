@@ -2232,6 +2232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f398eb2557dae2a4b9b646be9f4fb597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planned: 0
   fdPf: {fileID: 4812984332331388159, guid: b32e150d753521e4ab3793219038467d, type: 3}
   ltPf: {fileID: 1642592571470512945, guid: f8177b2b77520fd4881db0a878e54ca6, type: 3}
   rtPf: {fileID: 3686706980118316605, guid: 9488b3a096cf3a243bbb852f03237da9, type: 3}
@@ -2264,6 +2265,7 @@ MonoBehaviour:
   stopButtv: {fileID: 21300000, guid: 20f77a073eb629448bea868adf8d9f9e, type: 3}
   b_RepeatButt: {fileID: 1688653550}
   b_StopButt: {fileID: 1889973725}
+  panel: {fileID: 0}
 --- !u!4 &1011556850
 Transform:
   m_ObjectHideFlags: 0
