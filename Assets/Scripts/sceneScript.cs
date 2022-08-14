@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class sceneScript : MonoBehaviour
 {
-    public GameObject fdPf, ltPf, rtPf, repeatPf, stopRepPf, onePf, twoPf, threePf, fourPf, fivePf, sixPf ; //forwardPrefab etc.. 
+    public GameObject fdPf, ltPf, rtPf, repeatPf, stopRepPf, repeatPfv, stopRepPfv, onePf, twoPf, threePf, fourPf, fivePf, sixPf ; //forwardPrefab etc.. 
     public Vector3 startingPoint = new Vector3(-11.93f, -6.43f, -6.0f);
-    public float distanceBetween = 1.1f, distanceForNumber = 2.0f, tuningOfBigRepeatCard = 1.5f;
-    float startPointX = -11.9f, endPointX = 12.0f;
+    public float distanceBetween = 1.1f, distanceForNumber = 2.0f, tuningOfBigRepeatCard = 1.5f, maxXforRepeat = 10.34f;
+    public float startPointX = -11.9f, endPointX = 12.0f;
     BoxCollider2D sizeOfCard;
     public bool canMove = true;
     public List<int> instructs; //-- zapis instrukcii -- 1-6> pocet opakovani, 7-zac. opak, 8-koniec opak., 10-fd, 11-right, 12-left
@@ -16,6 +16,8 @@ public class sceneScript : MonoBehaviour
     public List<int> cycleRunning, cycleRunning2; //cyc2 len aby som si niekde drzala hodnoty az do vykonania instrukcii
     public bool needNumberInCycle = false;
     trashMove trashSc;
+    public Sprite repeatButt,repeatButtv, stopButt, stopButtv;
+    public Button b_RepeatButt, b_StopButt;
     //private checkSpace checkingSpaceScript;
     //public GameObject checker;
 
@@ -87,7 +89,14 @@ public class sceneScript : MonoBehaviour
     public void putRepeatCard()
     {   
         startPointX += tuningOfBigRepeatCard; //doladenie posunutia pre velke opakuj
-        Instantiate(repeatPf, new Vector3(startPointX, startingPoint[1], startingPoint[2]+0.1f), repeatPf.transform.rotation);
+        if (b_RepeatButt.GetComponent<Image>().sprite.name == "repeat_withoutSp")
+        {
+            Instantiate(repeatPf, new Vector3(startPointX, startingPoint[1], startingPoint[2]+0.1f), repeatPf.transform.rotation);
+        }
+        else
+        {
+            Instantiate(repeatPfv, new Vector3(startPointX, startingPoint[1], startingPoint[2]+0.1f), repeatPfv.transform.rotation);
+        }
         sizeOfCard = repeatPf.GetComponent<BoxCollider2D>();
         startPointX += sizeOfCard.size[0]/2.5f - distanceForNumber; //doladenie pre polozenie cisla do OPAKUJ karticky
         if (cycleRunning.Count != 0)
@@ -98,7 +107,15 @@ public class sceneScript : MonoBehaviour
     }
     public void putStopCard()
     {   
-        Instantiate(stopRepPf, new Vector3(startPointX, startingPoint[1], startingPoint[2]), stopRepPf.transform.rotation);
+        if (b_StopButt.GetComponent<Image>().sprite.name == "endCycle_smaller")
+        {
+            Instantiate(stopRepPf, new Vector3(startPointX, startingPoint[1], startingPoint[2]), stopRepPf.transform.rotation);
+        }
+        else
+        {
+             Instantiate(stopRepPfv, new Vector3(startPointX, startingPoint[1], startingPoint[2]), stopRepPfv.transform.rotation);
+        }
+        
         sizeOfCard = stopRepPf.GetComponent<BoxCollider2D>();
         startPointX += sizeOfCard.size[0]/2.5f + distanceBetween;
         canTrashMove();  
@@ -127,8 +144,8 @@ public class sceneScript : MonoBehaviour
     }
 
     public void RepeatCycle()
-    { 
-        if (startPointX < endPointX && needNumberInCycle == false)
+    {
+        if (startPointX < endPointX && needNumberInCycle == false && startPointX < maxXforRepeat)
         {
             if (cycleRunning.Count == 0)
             {
@@ -148,6 +165,16 @@ public class sceneScript : MonoBehaviour
                 cycleRunning2.Add(55);
                 needNumberInCycle = true;
             }
+            if (b_RepeatButt.GetComponent<Image>().sprite.name == "repeat_withoutSp")
+            {
+                b_RepeatButt.GetComponent<Image>().sprite = repeatButtv;
+                b_StopButt.GetComponent<Image>().sprite = stopButt;
+            }
+            else
+            {
+                b_RepeatButt.GetComponent<Image>().sprite = repeatButt;
+                b_StopButt.GetComponent<Image>().sprite = stopButtv;
+            }
         }
     }
     public void StopRepeat()
@@ -157,8 +184,16 @@ public class sceneScript : MonoBehaviour
             putStopCard();
             instructs.Add(8);
             cycleRunning.RemoveAt(cycleRunning.Count-1);
+            if (b_RepeatButt.GetComponent<Image>().sprite.name == "repeat_withoutSp")
+            {
+                b_StopButt.GetComponent<Image>().sprite = stopButt;
+            }
+            else
+            {
+                b_StopButt.GetComponent<Image>().sprite = stopButtv;
+            }
         }
-        if (cycleRunning.Count == 0)
+        if (cycleRunning.Count == 0 && cycleRunning2.Count != 0)
         {
             canMove = true;
             StartCoroutine(RepeatInstructions(0));
