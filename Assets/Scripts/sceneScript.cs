@@ -9,19 +9,24 @@ public class sceneScript : MonoBehaviour
     public bool planned = false;
     private bool plannedReserve = false;
     public GameObject fdPf, ltPf, rtPf, repeatPf, stopRepPf, repeatPfv, stopRepPfv, onePf, twoPf, threePf, fourPf, fivePf, sixPf ; //forwardPrefab etc.. 
-    public Vector3 startingPoint = new Vector3(-11.93f, -6.43f, -6.0f);
-    public float distanceBetween = 1.1f, distanceForNumber = 2.0f, tuningOfBigRepeatCard = 1.5f, maxXforRepeat = 10.34f;
-    public float startPointX = -11.9f, endPointX = 12.0f;
+    public Vector3 startingPoint = new Vector3(-11.93f, -6.43f, -6.0f); // prvy prikaz do listy prikazov
+    public float distanceBetween = 1.1f, distanceForNumber = 2.0f, tuningOfBigRepeatCard = 1.5f, maxXforRepeat = 10.34f; 
+    //vzdialenost medzi kartickami, vzdialenost pre cisla v karticke, doladenie velkej karty repeat, maximalne x pre repeat
+    private float startPointX = -11.9f; //startingpoint[0],
+    public float endPointX = 12.0f;  //suradnica x pre posledny prikaz v liste prikazov
     BoxCollider2D sizeOfCard;
-    public bool canMove = true;
+    public bool canMove = true; //ked je unplanned tak predef je true
     public List<int> instructs; //-- zapis instrukcii -- 1-6> pocet opakovani, 7-zac. opak, 8-koniec opak., 10-fd, 11-right, 12-left
     public List<int> indexOfInstructs; //na kolkej sme instrukcii
     public List<int> cycleRunning, cycleRunning2; //cyc2 len aby som si niekde drzala hodnoty az do vykonania instrukcii
     public bool needNumberInCycle = false;
     trashMove trashSc;
-    public Sprite repeatButt,repeatButtv, stopButt, stopButtv;
-    public Button b_RepeatButt, b_StopButt;
+    public Sprite repeatButt,repeatButtv, stopButt, stopButtv; //"v" for violet, tito su tu preto, aby sme zmenili vzhlad buttonov
+    public Button b_RepeatButt, b_StopButt;//tychto buttonov pri kliknuti na nich
     public GameObject panel;
+    public GameObject tile;
+    public int muchTilesX = 4, muchTilesY = 4; 
+    public float stepTiles = 2.8f, leftDownTileX = -11.0f, leftDownTileY = -4.0f;
     //private checkSpace checkingSpaceScript;
     //public GameObject checker;
 
@@ -29,16 +34,28 @@ public class sceneScript : MonoBehaviour
     void Start()
     {
         startPointX = startingPoint[0];
-        trashSc = GameObject.Find("Kos").GetComponent<trashMove>();
+        trashSc = GameObject.Find("KosZhora+Checker").GetComponent<trashMove>();
         //checkingSpaceScript = checker.GetComponent<checkSpace>();
         cycleRunning = new List<int>();
         cycleRunning2 = new List<int>();
         instructs = new List<int>();
         indexOfInstructs = new List<int>();
         plannedReserve = planned;
+        MakeTiles();
         if (planned)
         {
          RepeatCycle();   
+        }
+    }
+
+    private void MakeTiles()
+    {
+        for (int i = 0;  i < muchTilesX; i++)
+        {
+            for (int j = 0; j < muchTilesY; j++)
+            {
+                Instantiate(tile, new Vector3(leftDownTileX + i*stepTiles, leftDownTileY + j*stepTiles, 0), tile.transform.rotation);
+            }
         }
     }
 
