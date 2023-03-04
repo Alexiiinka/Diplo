@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class sceneScript : MonoBehaviour
 {
@@ -31,6 +32,9 @@ public class sceneScript : MonoBehaviour
     public Slider Trspeed;
     public Slider slVolume;
     public GameObject AmbientMusic;
+    public podmienkyScript skriptikPodmienok;
+    public int kolkoOpakovaniJeDanych = -1;
+    public TextMeshProUGUI cervenyTextik;
     //private checkSpace checkingSpaceScript;
     //public GameObject checker;
 
@@ -44,6 +48,7 @@ public class sceneScript : MonoBehaviour
         cycleRunning2 = new List<int>();
         instructs = new List<int>();
         indexOfInstructs = new List<int>();
+        skriptikPodmienok = GameObject.Find("Podmienky").GetComponent<podmienkyScript>();
         plannedReserve = planned;
         MakeTiles();
         if (planned)
@@ -171,6 +176,7 @@ public class sceneScript : MonoBehaviour
             needNumberInCycle = false;
             cycleRunning[cycleRunning.Count-1] = numbr;
             cycleRunning2[cycleRunning2.Count-1] = numbr;
+            kolkoOpakovaniJeDanych = numbr;
 
         }
         canTrashMove();
@@ -261,7 +267,6 @@ public class sceneScript : MonoBehaviour
                 indexOfInstructs.Clear();
                 indexOfInstructs.Add(0);
             }
-            Debug.Log(indexOfRepeat);
             while (instructs[indexOfInstructs[indexOfRepeat]] != 8)
             {   yield return new WaitForSeconds(trashSpeed);
                 if(instructs[indexOfInstructs[indexOfRepeat]] == 10){trashSc.moveFd();}
@@ -286,6 +291,10 @@ public class sceneScript : MonoBehaviour
             }
         if (indexOfRepeat == 0)
         {
+            if (skriptikPodmienok.suPodmienky)
+            {
+                KontrolaPodmienok();
+            }
             instructs.Clear();
             cycleRunning2.Clear();
             if (!plannedReserve){TurnButtonsActive();}
@@ -341,5 +350,23 @@ public class sceneScript : MonoBehaviour
     {
         persistenceScript.volume = tento.value;
         persistenceScriptVolume.thisAmbientMusic.GetComponent<AudioSource>().volume = tento.value;
+    }
+
+    public void KontrolaPodmienok()
+    {
+        if (skriptikPodmienok.naCyklus)
+        {
+            bool najdenyCyk = false;
+            bool spravnyPocetOpak = false;
+            for (int q = 0; q < instructs.Count; q++)
+            {
+                if(instructs[q] == 7){najdenyCyk = true;} 
+                if(kolkoOpakovaniJeDanych == skriptikPodmienok.kolkoOpakovani){spravnyPocetOpak = true;}
+            }
+            if (!najdenyCyk || !spravnyPocetOpak)
+            {
+                print("NENI CYKLUS S POCTOM OPAKOVANI " + skriptikPodmienok.kolkoOpakovani + " POKAKAL SI TOOOO");
+            }
+        }
     }
 }
