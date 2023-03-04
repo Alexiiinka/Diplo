@@ -29,6 +29,8 @@ public class sceneScript : MonoBehaviour
     public float stepTiles = 2.8f, leftDownTileX = -11.0f, leftDownTileY = -4.0f;
     public float trashSpeed = 0.5f;
     public Slider Trspeed;
+    public Slider slVolume;
+    public GameObject AmbientMusic;
     //private checkSpace checkingSpaceScript;
     //public GameObject checker;
 
@@ -50,6 +52,7 @@ public class sceneScript : MonoBehaviour
         }
         trashSpeed = persistenceScript.trashikSpeed;
         Trspeed.value = persistenceScript.trashikSpeed;
+        slVolume.value = persistenceScript.volume;
     }
 
     private void MakeTiles()
@@ -333,5 +336,10 @@ public class sceneScript : MonoBehaviour
     {
         trashSpeed = Trspeed.value;
         persistenceScript.trashikSpeed = trashSpeed;
+    }
+    public void ChangeOfVolume(Slider tento)
+    {
+        persistenceScript.volume = tento.value;
+        persistenceScriptVolume.thisAmbientMusic.GetComponent<AudioSource>().volume = tento.value;
     }
 }
