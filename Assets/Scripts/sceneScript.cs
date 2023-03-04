@@ -27,6 +27,8 @@ public class sceneScript : MonoBehaviour
     public GameObject tile;
     public int muchTilesX = 4, muchTilesY = 4; 
     public float stepTiles = 2.8f, leftDownTileX = -11.0f, leftDownTileY = -4.0f;
+    public float trashSpeed = 0.5f;
+    public Slider Trspeed;
     //private checkSpace checkingSpaceScript;
     //public GameObject checker;
 
@@ -46,6 +48,8 @@ public class sceneScript : MonoBehaviour
         {
          RepeatCycle();   
         }
+        trashSpeed = persistenceScript.trashikSpeed;
+        Trspeed.value = persistenceScript.trashikSpeed;
     }
 
     private void MakeTiles()
@@ -256,7 +260,7 @@ public class sceneScript : MonoBehaviour
             }
             Debug.Log(indexOfRepeat);
             while (instructs[indexOfInstructs[indexOfRepeat]] != 8)
-            {   yield return new WaitForSeconds( 0.5f );
+            {   yield return new WaitForSeconds(trashSpeed);
                 if(instructs[indexOfInstructs[indexOfRepeat]] == 10){trashSc.moveFd();}
                 if(instructs[indexOfInstructs[indexOfRepeat]] == 11){trashSc.rightRotate();}
                 if(instructs[indexOfInstructs[indexOfRepeat]] == 12){trashSc.leftRotate();}  
@@ -268,7 +272,7 @@ public class sceneScript : MonoBehaviour
                 else
                 {
                     indexOfInstructs[indexOfRepeat]++;
-                    yield return new WaitForSeconds( 0.5f );
+                    yield return new WaitForSeconds(trashSpeed);
                 }     
             }
         }
@@ -303,22 +307,31 @@ public class sceneScript : MonoBehaviour
 
     public void playInstructs()
     {
-        instructs.Add(8);
-        cycleRunning.RemoveAt(cycleRunning.Count-1);
-        if (cycleRunning.Count == 0 && cycleRunning2.Count != 0)
+        if (instructs.Count != 0)
         {
-            canMove = true;
-            TurnButtonsUnactive();
-            StartCoroutine(RepeatInstructions(0));
+            instructs.Add(8);
+            cycleRunning.RemoveAt(cycleRunning.Count-1);
+            if (cycleRunning.Count == 0 && cycleRunning2.Count != 0)
+            {
+                canMove = true;
+                TurnButtonsUnactive();
+                StartCoroutine(RepeatInstructions(0));
            
-        }
-        else{
-            panel.SetActive(true);
+            }
+            else{
+                panel.SetActive(true);
+            }
         }
     }
 
     public void RestartScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void ChangeOfSpeed()
+    {
+        trashSpeed = Trspeed.value;
+        persistenceScript.trashikSpeed = trashSpeed;
     }
 }

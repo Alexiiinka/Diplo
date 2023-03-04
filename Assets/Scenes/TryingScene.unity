@@ -272,7 +272,7 @@ MonoBehaviour:
   fivePf: {fileID: 349396878106252592, guid: a48e952935b2a0743bdb30a8efdbde08, type: 3}
   sixPf: {fileID: 6483152625767631789, guid: b925c067c4065524f80986cf22b48c47, type: 3}
   startingPoint: {x: -11.93, y: -6.43, z: -6}
-  distanceBetween: 0.05
+  distanceBetween: 0.1
   distanceForNumber: 3.2
   tuningOfBigRepeatCard: 1.6
   maxXforRepeat: 9.34
@@ -290,10 +290,10 @@ MonoBehaviour:
   b_RepeatButt: {fileID: 1688653550}
   b_StopButt: {fileID: 1889973725}
   panel: {fileID: 0}
-  tile: {fileID: 9122276040470027348, guid: afb10a7626ddbba459393e2861885e7c, type: 3}
-  muchTilesX: 12
-  muchTilesY: 7
-  stepTiles: 1.6
+  tile: {fileID: 3525091218429742023, guid: 0dfc01faec0b38942984a7b1ac1ca7b0, type: 3}
+  muchTilesX: 4
+  muchTilesY: 4
+  stepTiles: 2.8
   leftDownTileX: -11
   leftDownTileY: -4
 --- !u!4 &1011556850
@@ -805,7 +805,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1785732866166300936, guid: eb8759f7c52b5d7499cca073321bed4e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.4
+      value: -11
       objectReference: {fileID: 0}
     - target: {fileID: 1785732866166300936, guid: eb8759f7c52b5d7499cca073321bed4e, type: 3}
       propertyPath: m_LocalPosition.y
