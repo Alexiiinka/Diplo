@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2256412898677659640
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2256412898677659642}
+  - component: {fileID: 2256412898677659641}
+  m_Layer: 0
+  m_Name: SceneManagerTryingUNplanned
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2256412898677659642
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2256412898677659640}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2256412898677659641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2256412898677659640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f398eb2557dae2a4b9b646be9f4fb597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planned: 1
+  fdPf: {fileID: 4812984332331388159, guid: b32e150d753521e4ab3793219038467d, type: 3}
+  ltPf: {fileID: 1642592571470512945, guid: f8177b2b77520fd4881db0a878e54ca6, type: 3}
+  rtPf: {fileID: 3686706980118316605, guid: 9488b3a096cf3a243bbb852f03237da9, type: 3}
+  repeatPf: {fileID: 2729464021182751842, guid: 5d3d065984493344ea6ea11dcd87b236, type: 3}
+  stopRepPf: {fileID: 7546165592172458589, guid: 03de39d1552e13245a82c71e87fcbead, type: 3}
+  repeatPfv: {fileID: 1854197220102294954, guid: e979d7a6101f98147969209b9a3d6aee, type: 3}
+  stopRepPfv: {fileID: 2653670189426366765, guid: 6b4e531b9d041ca45830ae72abfa2cea, type: 3}
+  onePf: {fileID: 1441691826074911898, guid: 3c576a92c2d7355458b19fb509a9dabd, type: 3}
+  twoPf: {fileID: 6597265272405702262, guid: ab8f3b11ca3730d4dbe38ccef1614f0e, type: 3}
+  threePf: {fileID: 2436135053727547342, guid: 0ee6317f89c7b474bbee1dac1155eacf, type: 3}
+  fourPf: {fileID: 1957710605583642758, guid: 4b3d2f23974d6f04bb5c370d7ef115aa, type: 3}
+  fivePf: {fileID: 349396878106252592, guid: a48e952935b2a0743bdb30a8efdbde08, type: 3}
+  sixPf: {fileID: 6483152625767631789, guid: b925c067c4065524f80986cf22b48c47, type: 3}
+  startingPoint: {x: -11.93, y: -6.43, z: -6}
+  distanceBetween: 0.05
+  distanceForNumber: 3.2
+  tuningOfBigRepeatCard: 1.6
+  maxXforRepeat: 9.34
+  endPointX: 12
+  canMove: 1
+  instructs: 
+  indexOfInstructs: 
+  cycleRunning: 
+  cycleRunning2: 
+  needNumberInCycle: 0
+  repeatButt: {fileID: 21300000, guid: f6441c027e6610846abcff6da7165b85, type: 3}
+  repeatButtv: {fileID: 21300000, guid: ba681054fcf8f4748933ce7b6d1f7150, type: 3}
+  stopButt: {fileID: 21300000, guid: a94825f8655a86f41adad3e6acfe9202, type: 3}
+  stopButtv: {fileID: 21300000, guid: 20f77a073eb629448bea868adf8d9f9e, type: 3}
+  b_RepeatButt: {fileID: 0}
+  b_StopButt: {fileID: 0}
+  panel: {fileID: 0}
+  tile: {fileID: 3525091218429742023, guid: 0dfc01faec0b38942984a7b1ac1ca7b0, type: 3}
+  tileTrigerko: {fileID: 3525091218429742023, guid: ec10cf14b1769b34a8029ff9e683283f, type: 3}
+  muchTilesX: 4
+  muchTilesY: 4
+  stepTiles: 2.8
+  leftDownTileX: -11
+  leftDownTileY: -4
+  trashSpeed: 0.5
+  Trspeed: {fileID: 0}
+  slVolume: {fileID: 0}
+  AmbientMusic: {fileID: 0}
+  skriptikPodmienok: {fileID: 0}
+  kolkoOpakovaniJeDanych: -1
+  cervenyTextik: {fileID: 0}
+  bielyTextik: {fileID: 0}
+  ziarivyZelenyText: {fileID: 11400000, guid: f12d8aa95535bce40958b871fe2adda3, type: 2}
+  jeVCieliZelenom: 0
+  podmienkovyText: {fileID: 0}

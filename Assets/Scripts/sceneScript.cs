@@ -304,6 +304,8 @@ public class sceneScript : MonoBehaviour
             }
         if (indexOfRepeat == 0)
         {
+            if (plannedReserve)
+            {
             if (skriptikPodmienok.suPodmienky)
             {
                 KontrolaPodmienok();
@@ -321,6 +323,7 @@ public class sceneScript : MonoBehaviour
                 cervenyTextik.text = "SUPEEEER";
                 bielyTextik.text = "Hor sa na ďalší level!";
                 panel.SetActive(true);
+            }
             }
             instructs.Clear();
             cycleRunning2.Clear();
@@ -377,6 +380,7 @@ public class sceneScript : MonoBehaviour
     }
     public void ChangeOfVolume(Slider tento)
     {
+        print("vykon");
         persistenceScript.volume = tento.value;
         persistenceScriptVolume.thisAmbientMusic.GetComponent<AudioSource>().volume = tento.value;
     }
