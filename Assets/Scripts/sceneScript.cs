@@ -26,6 +26,7 @@ public class sceneScript : MonoBehaviour
     public Button b_RepeatButt, b_StopButt;//tychto buttonov pri kliknuti na nich
     public GameObject panel;
     public GameObject tile;
+    public GameObject tileTrigerko;
     public int muchTilesX = 4, muchTilesY = 4; 
     public float stepTiles = 2.8f, leftDownTileX = -11.0f, leftDownTileY = -4.0f;
     public float trashSpeed = 0.5f;
@@ -37,6 +38,8 @@ public class sceneScript : MonoBehaviour
     public TextMeshProUGUI cervenyTextik; //text co sa objavi ak nieco nebolo splnene - vystrazny
     public TextMeshProUGUI bielyTextik; // text ako nad nim, ale biely - doplnkovy, vysvetlovaci
     public TMP_FontAsset ziarivyZelenyText;
+    public bool jeVCieliZelenom = false;
+    public TextMeshProUGUI podmienkovyText;
     //private checkSpace checkingSpaceScript;
     //public GameObject checker;
 
@@ -57,6 +60,7 @@ public class sceneScript : MonoBehaviour
         {
          RepeatCycle();   
         }
+        if (skriptikPodmienok.suPodmienky || skriptikPodmienok.jeTriggerPodmienka){ZmenaTextuPodmienok();}
         trashSpeed = persistenceScript.trashikSpeed;
         Trspeed.value = persistenceScript.trashikSpeed;
         slVolume.value = persistenceScript.volume;
@@ -68,7 +72,14 @@ public class sceneScript : MonoBehaviour
         {
             for (int j = 0; j < muchTilesY; j++)
             {
-                Instantiate(tile, new Vector3(leftDownTileX + i*stepTiles, leftDownTileY + j*stepTiles, 0), tile.transform.rotation);
+                if (skriptikPodmienok.jeTriggerPodmienka && skriptikPodmienok.kolkaX == i && skriptikPodmienok.kolkaY == j)
+                {
+                    Instantiate(tileTrigerko, new Vector3(leftDownTileX + i*stepTiles, leftDownTileY + j*stepTiles, 0), tile.transform.rotation);
+                }
+                else
+                {
+                    Instantiate(tile, new Vector3(leftDownTileX + i*stepTiles, leftDownTileY + j*stepTiles, 0), tile.transform.rotation);
+                }
             }
         }
     }
@@ -297,6 +308,20 @@ public class sceneScript : MonoBehaviour
             {
                 KontrolaPodmienok();
             }
+            else if (skriptikPodmienok.jeTriggerPodmienka && !jeVCieliZelenom)
+            {
+                print("OCH NIE");
+                cervenyTextik.text = "Nedostal si sa do cieľa";
+                bielyTextik.text = "Skús naprogramovať šoka tak, aby sa dostal na zelené políčko. Určite to zvládneš!";
+                panel.SetActive(true);
+            }
+            else
+            {
+                cervenyTextik.font = ziarivyZelenyText;
+                cervenyTextik.text = "SUPEEEER";
+                bielyTextik.text = "Hor sa na ďalší level!";
+                panel.SetActive(true);
+            }
             instructs.Clear();
             cycleRunning2.Clear();
             if (!plannedReserve){TurnButtonsActive();}
@@ -372,7 +397,7 @@ public class sceneScript : MonoBehaviour
                 cervenyTextik.text = "Nepoužil si cyklus s počtom opakovaním " + skriptikPodmienok.kolkoOpakovani;
                 if (skriptikPodmienok.podmienkaNaMaxPrikazov)
                 {
-                    bielyTextik.text = "Pozor na podmienky. V tejto úlohe máš zadané, že musíš využiť cyklus, ktorý sa vykoná " + skriptikPodmienok.kolkoOpakovani +"-krát. Tiež môžeš využiť MAXIMÁLNE " +skriptikPodmienok.maxPrikazov + " príkazpv. Skús tak naprogramovať Šoka. Určite to zvládneš!";
+                    bielyTextik.text = "Pozor na podmienky. V tejto úlohe máš zadané, že musíš využiť cyklus, ktorý sa vykoná " + skriptikPodmienok.kolkoOpakovani +"-krát. Tiež môžeš využiť MAXIMÁLNE " +skriptikPodmienok.maxPrikazov + " príkazy/príkazov. Skús tak naprogramovať Šoka. Určite to zvládneš!";
                 }
                 else
                 {
@@ -393,7 +418,7 @@ public class sceneScript : MonoBehaviour
             if (instructs.Count > skriptikPodmienok.maxPrikazov)
             {
                 cervenyTextik.text = "Použil si veľa príkazov";
-                bielyTextik.text = "Pozor na podmienky. V tejto úlohe môžeš využiť maximálne " + skriptikPodmienok.maxPrikazov +" príkazov. Ak nevieš, ako sa príkazy počítajú, prečítaj si inštrukcie (klik na tlačidlo). Určite to zvládneš!";
+                bielyTextik.text = "Pozor na podmienky. V tejto úlohe môžeš využiť maximálne " + skriptikPodmienok.maxPrikazov +" prikazy/príkazov. Ak nevieš, ako sa príkazy počítajú, prečítaj si inštrukcie (klik na tlačidlo). Určite to zvládneš!";
                 panel.SetActive(true);
                 return;
             }
@@ -424,5 +449,23 @@ public class sceneScript : MonoBehaviour
         cervenyTextik.text = "SUPEEEER";
         bielyTextik.text = "Hor sa na ďalší level!";
         panel.SetActive(true);
+        panel.transform.Find("b_NextLevel").gameObject.SetActive(true);
+    }
+
+    private void ZmenaTextuPodmienok()
+    {   string sklonovanie = "ahoj";
+        if (skriptikPodmienok.podmienkaNaMaxPrikazov)
+        {   if (skriptikPodmienok.maxPrikazov < 5){sklonovanie = " príkazy.";}
+            else{sklonovanie = " príkazov.";}
+        }
+        podmienkovyText.text = "PODMIENKY: ";
+        if (skriptikPodmienok.jeTriggerPodmienka){podmienkovyText.text += "Dostaň sa na zelený cieľ.";}
+        if (skriptikPodmienok.suPodmienky)
+        {
+            if (skriptikPodmienok.naCyklus){podmienkovyText.text+= "Použi cyklus s počtom opakovaní: " + skriptikPodmienok.kolkoOpakovani + ". ";}
+            if (skriptikPodmienok.podmienkaNaMaxPrikazov){podmienkovyText.text += "Môžeš využiť max. " + skriptikPodmienok.maxPrikazov + sklonovanie;}
+            if (skriptikPodmienok.specifickePodmienky){
+                podmienkovyText.text = skriptikPodmienok.speciPrikazyText + " Môžeš využiť max. " + skriptikPodmienok.maxPrikazov + sklonovanie;}
+        }
     }
 }

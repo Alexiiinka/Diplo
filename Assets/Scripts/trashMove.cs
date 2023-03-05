@@ -68,4 +68,10 @@ public class trashMove : MonoBehaviour
     // {
     //     trashRb.position = previousPos;
     // }
+
+    void OnTriggerEnter(Collider other)
+    {
+        scriptSc.jeVCieliZelenom = true;
+        print("Je tady");
+    }
 }

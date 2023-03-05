@@ -139,6 +139,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4174877242310791566, guid: 1e6f1713380ecdf47b1fd8dd71d75034, type: 3}
   m_PrefabInstance: {fileID: 748481927558650602}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &353242772 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 353242772, guid: 1e6f1713380ecdf47b1fd8dd71d75034, type: 3}
+  m_PrefabInstance: {fileID: 748481927558650602}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &426261252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -250,6 +261,10 @@ PrefabInstance:
     - target: {fileID: 1785732866166300938, guid: eb8759f7c52b5d7499cca073321bed4e, type: 3}
       propertyPath: m_Name
       value: KosZhora+Checker
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785732866166300950, guid: eb8759f7c52b5d7499cca073321bed4e, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb8759f7c52b5d7499cca073321bed4e, type: 3}
@@ -377,13 +392,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b02e6dbe81bc71498873166ecd3e598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jeTriggerPodmienka: 0
+  kolkaX: 3
+  kolkaY: 0
   suPodmienky: 1
   naCyklus: 1
   kolkoOpakovani: 5
   podmienkaNaMaxPrikazov: 1
-  maxPrikazov: 5
+  maxPrikazov: 2
   specifickePodmienky: 1
   speciPrikazy: 070000000b00000008000000
+  speciPrikazyText: "Oto\u010D sa p\xE4\u0165kr\xE1t doprava."
 --- !u!4 &708123128
 Transform:
   m_ObjectHideFlags: 0
@@ -931,38 +950,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1011556849}
-    - target: {fileID: 1132486807147921692, guid: 1e6f1713380ecdf47b1fd8dd71d75034, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: d635f89a0a1c11b4fa25752e6e17ff5a, type: 2}
-    - target: {fileID: 1132486807147921692, guid: 1e6f1713380ecdf47b1fd8dd71d75034, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 3563509238126102718, guid: d635f89a0a1c11b4fa25752e6e17ff5a, type: 2}
     - target: {fileID: 4025307273222936459, guid: 1e6f1713380ecdf47b1fd8dd71d75034, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1011556849}
+    - target: {fileID: 4174877242310791565, guid: 1e6f1713380ecdf47b1fd8dd71d75034, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 18.996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4174877242310791565, guid: 1e6f1713380ecdf47b1fd8dd71d75034, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -9.497986
+      objectReference: {fileID: 0}
     - target: {fileID: 4174877242310791566, guid: 1e6f1713380ecdf47b1fd8dd71d75034, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6450238703952004180, guid: 1e6f1713380ecdf47b1fd8dd71d75034, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 8a1e38527371d4147ab29b707779c818, type: 2}
-    - target: {fileID: 6450238703952004180, guid: 1e6f1713380ecdf47b1fd8dd71d75034, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 7097619885890598077, guid: 8a1e38527371d4147ab29b707779c818, type: 2}
     - target: {fileID: 7863917300685363133, guid: 1e6f1713380ecdf47b1fd8dd71d75034, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1011556849}
-    - target: {fileID: 9192822170871139008, guid: 1e6f1713380ecdf47b1fd8dd71d75034, type: 3}
-      propertyPath: m_Name
-      value: Nadpis
-      objectReference: {fileID: 0}
     - target: {fileID: 9206465169221448192, guid: 1e6f1713380ecdf47b1fd8dd71d75034, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -993,6 +1000,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 723240992}
     - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: endPointX
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
       propertyPath: b_StopButt
       value: 
       objectReference: {fileID: 1889973725}
@@ -1009,9 +1020,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1688653550}
     - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: tileTrigerko
+      value: 
+      objectReference: {fileID: 3525091218429742023, guid: ec10cf14b1769b34a8029ff9e683283f, type: 3}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
       propertyPath: cervenyTextik
       value: 
       objectReference: {fileID: 2081479636}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: podmienkovyText
+      value: 
+      objectReference: {fileID: 353242772}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: startingPoint.x
+      value: -11.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
       propertyPath: skriptikPodmienok
       value: 

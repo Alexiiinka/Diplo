@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "In\u0161trukcie"
+  m_text: ZNOVA
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2d33a5dcaad9a784f8badbb89671b42e, type: 2}
   m_sharedMaterial: {fileID: -6968812593344753557, guid: 2d33a5dcaad9a784f8badbb89671b42e, type: 2}
@@ -93,13 +93,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 43
-  m_fontSizeBase: 43
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.24705884, g: 0.13725491, b: 0.14117648, a: 1}
-    m_HighlightedColor: {r: 0.46226418, g: 0.23840035, b: 0.24639547, a: 1}
+    m_HighlightedColor: {r: 0.7830189, g: 0.411208, b: 0.42425394, a: 1}
     m_PressedColor: {r: 0.122641504, g: 0.032010198, b: 0.035247017, a: 1}
     m_SelectedColor: {r: 0.121568635, g: 0.03137255, b: 0.03529412, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -256,4 +256,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6704137859282112184}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 0

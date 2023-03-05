@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class podmienkyScript : MonoBehaviour
 {
+    public bool jeTriggerPodmienka = false; //ci sa ma Šoko niekam dostať
+    public int kolkaX = 3, kolkaY = 0; //kolkata je trigger v X = v stlpci, zlava doprava,/ kolkata je v Y zhora dole
+    // to jest x = 3, tak 4. stlpec, y = 0 tak 0ty riadok = spodny
     public bool suPodmienky = false; // ci su zadane vobec nejake podmienky v ulohe
     public bool naCyklus = false; // ci je v ulohe podmienka na pocet cyklov
     public int kolkoOpakovani = 1; // kolko OPAKOVI cyklu musi byt ak je splnena podmienka naCyklus
@@ -15,6 +18,7 @@ public class podmienkyScript : MonoBehaviour
     public bool specifickePodmienky = false;
     //-- zapis instrukcii -- 1-6> pocet opakovani, 7-zac. opak, 8-koniec opak., 10-fd, 11-right, 12-left
     public List<int> speciPrikazy;
+    public string speciPrikazyText;
 
     // Start is called before the first frame update
     void Start()
