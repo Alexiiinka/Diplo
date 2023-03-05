@@ -34,7 +34,8 @@ public class sceneScript : MonoBehaviour
     public GameObject AmbientMusic;
     public podmienkyScript skriptikPodmienok;
     public int kolkoOpakovaniJeDanych = -1;
-    public TextMeshProUGUI cervenyTextik;
+    public TextMeshProUGUI cervenyTextik; //text co sa objavi ak nieco nebolo splnene - vystrazny
+    public TextMeshProUGUI bielyTextik; // text ako nad nim, ale biely - doplnkovy, vysvetlovaci
     //private checkSpace checkingSpaceScript;
     //public GameObject checker;
 
@@ -331,6 +332,8 @@ public class sceneScript : MonoBehaviour
            
             }
             else{
+                cervenyTextik.text = "Neukončil si správne OPAKOVANIE!";
+                bielyTextik.text = "Každý cyklus (opakovanie) musí niekde začínať, aj končiť, aby bolo jasné, ktoré príkazy patria do tela cyklu. V tele cyklu sú príkazy, ktoré sa majú vykonať viackrát. Príkazy pred cyklum, alebo za cyklom, sa vykonajú iba raz.";
                 panel.SetActive(true);
             }
         }
@@ -365,8 +368,48 @@ public class sceneScript : MonoBehaviour
             }
             if (!najdenyCyk || !spravnyPocetOpak)
             {
-                print("NENI CYKLUS S POCTOM OPAKOVANI " + skriptikPodmienok.kolkoOpakovani + " POKAKAL SI TOOOO");
+                cervenyTextik.text = "Nepoužil si cyklus s počtom opakovaním " + skriptikPodmienok.kolkoOpakovani;
+                if (skriptikPodmienok.podmienkaNaMaxPrikazov)
+                {
+                    bielyTextik.text = "Pozor na podmienky. V tejto úlohe máš zadané, že musíš využiť cyklus, ktorý sa vykoná " + skriptikPodmienok.kolkoOpakovani +"-krát. Tiež môžeš využiť MAXIMÁLNE " +skriptikPodmienok.maxPrikazov + " príkazpv. Skús tak naprogramovať Šoka. Určite to zvládneš!";
+                }
+                else
+                {
+                    bielyTextik.text = "Pozor na podmienky. V tejto úlohe máš zadané, že musíš využiť cyklus, ktorý sa vykoná " + skriptikPodmienok.kolkoOpakovani +"-krát. Skús tak naprogramovať Šoka. Určite to zvládneš!";
+                }
+                
+                panel.SetActive(true);
+                return;
             }
         }
+        if (skriptikPodmienok.podmienkaNaMaxPrikazov)
+        {
+            while (instructs.Contains(8))
+            {
+                instructs.Remove(8);
+            }
+            if (instructs.Count > skriptikPodmienok.maxPrikazov)
+            {
+                cervenyTextik.text = "Použil si veľa príkazov";
+                bielyTextik.text = "Pozor na podmienky. V tejto úlohe môžeš využiť maximálne " + skriptikPodmienok.maxPrikazov +" príkazov. Ak nevieš, ako sa príkazy počítajú, prečítaj si inštrukcie (klik na tlačidlo). Určite to zvládneš!";
+                panel.SetActive(true);
+                return;
+            }
+        }
+        if (skriptikPodmienok.specifickePodmienky) //ak su specificke podmienky, tak musi byt aj MAX PRIKAZOV!!!!
+        {
+            for (int prikazik = 0; prikazik < skriptikPodmienok.speciPrikazy.Count; prikazik++)
+            {
+                if (instructs[prikazik] != skriptikPodmienok.speciPrikazy[prikazik])
+                {
+                    cervenyTextik.text = "Nemáš to správne vyriešené :(";
+                    bielyTextik.text = "Pozor na podmienky v úlohe. Je presne dané, akou postupnosťou sa má Šoko správať. Určite to zvládneš!";
+                    panel.SetActive(true);
+                    return;
+                }
+            }
+        }
+
+
     }
 }

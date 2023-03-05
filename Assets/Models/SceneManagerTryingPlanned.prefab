@@ -85,3 +85,9 @@ MonoBehaviour:
   leftDownTileY: -4
   trashSpeed: 0.5
   Trspeed: {fileID: 0}
+  slVolume: {fileID: 0}
+  AmbientMusic: {fileID: 0}
+  skriptikPodmienok: {fileID: 0}
+  kolkoOpakovaniJeDanych: -1
+  cervenyTextik: {fileID: 0}
+  bielyTextik: {fileID: 0}
