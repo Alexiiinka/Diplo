@@ -36,6 +36,7 @@ public class sceneScript : MonoBehaviour
     public int kolkoOpakovaniJeDanych = -1;
     public TextMeshProUGUI cervenyTextik; //text co sa objavi ak nieco nebolo splnene - vystrazny
     public TextMeshProUGUI bielyTextik; // text ako nad nim, ale biely - doplnkovy, vysvetlovaci
+    public TMP_FontAsset ziarivyZelenyText;
     //private checkSpace checkingSpaceScript;
     //public GameObject checker;
 
@@ -382,6 +383,7 @@ public class sceneScript : MonoBehaviour
                 return;
             }
         }
+        List<int> newInstructs = new List<int>(instructs);
         if (skriptikPodmienok.podmienkaNaMaxPrikazov)
         {
             while (instructs.Contains(8))
@@ -398,7 +400,16 @@ public class sceneScript : MonoBehaviour
         }
         if (skriptikPodmienok.specifickePodmienky) //ak su specificke podmienky, tak musi byt aj MAX PRIKAZOV!!!!
         {
-            for (int prikazik = 0; prikazik < skriptikPodmienok.speciPrikazy.Count; prikazik++)
+            
+            newInstructs.RemoveAt(newInstructs.Count-1);
+            if (newInstructs.Count != skriptikPodmienok.speciPrikazy.Count)
+            {
+                cervenyTextik.text = "Nemáš to správne vyriešené :(";
+                bielyTextik.text = "Pozor na podmienky v úlohe. Je presne dané, akou postupnosťou sa má Šoko správať. Určite to zvládneš!";
+                panel.SetActive(true);
+                return;
+            }
+            for (int prikazik = 0; prikazik < skriptikPodmienok.speciPrikazy.Count-1; prikazik++)
             {
                 if (instructs[prikazik] != skriptikPodmienok.speciPrikazy[prikazik])
                 {
@@ -409,7 +420,9 @@ public class sceneScript : MonoBehaviour
                 }
             }
         }
-
-
+        cervenyTextik.font = ziarivyZelenyText;
+        cervenyTextik.text = "SUPEEEER";
+        bielyTextik.text = "Hor sa na ďalší level!";
+        panel.SetActive(true);
     }
 }

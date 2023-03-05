@@ -382,8 +382,8 @@ MonoBehaviour:
   kolkoOpakovani: 5
   podmienkaNaMaxPrikazov: 1
   maxPrikazov: 5
-  specifickePodmienky: 0
-  speciPrikazy: 
+  specifickePodmienky: 1
+  speciPrikazy: 070000000b00000008000000
 --- !u!4 &708123128
 Transform:
   m_ObjectHideFlags: 0
@@ -931,14 +931,38 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1011556849}
+    - target: {fileID: 1132486807147921692, guid: 1e6f1713380ecdf47b1fd8dd71d75034, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: d635f89a0a1c11b4fa25752e6e17ff5a, type: 2}
+    - target: {fileID: 1132486807147921692, guid: 1e6f1713380ecdf47b1fd8dd71d75034, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3563509238126102718, guid: d635f89a0a1c11b4fa25752e6e17ff5a, type: 2}
     - target: {fileID: 4025307273222936459, guid: 1e6f1713380ecdf47b1fd8dd71d75034, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1011556849}
+    - target: {fileID: 4174877242310791566, guid: 1e6f1713380ecdf47b1fd8dd71d75034, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6450238703952004180, guid: 1e6f1713380ecdf47b1fd8dd71d75034, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8a1e38527371d4147ab29b707779c818, type: 2}
+    - target: {fileID: 6450238703952004180, guid: 1e6f1713380ecdf47b1fd8dd71d75034, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7097619885890598077, guid: 8a1e38527371d4147ab29b707779c818, type: 2}
     - target: {fileID: 7863917300685363133, guid: 1e6f1713380ecdf47b1fd8dd71d75034, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1011556849}
+    - target: {fileID: 9192822170871139008, guid: 1e6f1713380ecdf47b1fd8dd71d75034, type: 3}
+      propertyPath: m_Name
+      value: Nadpis
+      objectReference: {fileID: 0}
     - target: {fileID: 9206465169221448192, guid: 1e6f1713380ecdf47b1fd8dd71d75034, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -992,6 +1016,10 @@ PrefabInstance:
       propertyPath: skriptikPodmienok
       value: 
       objectReference: {fileID: 708123127}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: ziarivyZelenyText
+      value: 
+      objectReference: {fileID: 11400000, guid: f12d8aa95535bce40958b871fe2adda3, type: 2}
     - target: {fileID: 2256412898677659642, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
       propertyPath: m_RootOrder
       value: 3
