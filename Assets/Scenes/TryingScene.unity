@@ -341,11 +341,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3881719499825541639, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
       propertyPath: naCyklus
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881719499825541639, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
+      propertyPath: maxPrikazov
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3881719499825541639, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
       propertyPath: suPodmienky
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881719499825541639, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
+      propertyPath: kolkoOpakovani
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881719499825541639, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
+      propertyPath: jeTriggerPodmienka
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3881719499825541639, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
       propertyPath: specifickePodmienky
@@ -353,7 +365,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3881719499825541639, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
       propertyPath: podmienkaNaMaxPrikazov
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3881719499825541640, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
       propertyPath: m_RootOrder
@@ -1041,6 +1053,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PutFive
       objectReference: {fileID: 0}
+    - target: {fileID: 2369968261172790261, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1789904173}
+    - target: {fileID: 3129297163745624455, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 681.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 3129297163745624455, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 68.782
+      objectReference: {fileID: 0}
     - target: {fileID: 4025307273222936459, guid: 00870e021e4ddd840818930039d3816c, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1075,7 +1099,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7863917300685363132, guid: 00870e021e4ddd840818930039d3816c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 761.59
+      value: 862.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863917300685363132, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -337
       objectReference: {fileID: 0}
     - target: {fileID: 7863917300685363133, guid: 00870e021e4ddd840818930039d3816c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1085,26 +1113,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RestartScene
       objectReference: {fileID: 0}
-    - target: {fileID: 9163533676122303067, guid: 00870e021e4ddd840818930039d3816c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9206465169221448192, guid: 00870e021e4ddd840818930039d3816c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9206465169221448192, guid: 00870e021e4ddd840818930039d3816c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1789904173}
-    - target: {fileID: 9206465169221448192, guid: 00870e021e4ddd840818930039d3816c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9206465169221448192, guid: 00870e021e4ddd840818930039d3816c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RestartScene
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00870e021e4ddd840818930039d3816c, type: 3}
 --- !u!114 &1495597496 stripped

@@ -40,6 +40,7 @@ public class sceneScript : MonoBehaviour
     public TMP_FontAsset ziarivyZelenyText;
     public bool jeVCieliZelenom = false;
     public TextMeshProUGUI podmienkovyText;
+    private List<int> listPriamychInstrukcii = new List<int>(); // na kontrolu priameho rezimu - overenie - pre podmienky dane
     //private checkSpace checkingSpaceScript;
     //public GameObject checker;
 
@@ -102,13 +103,15 @@ public class sceneScript : MonoBehaviour
             if (cycleRunning.Count != 0)
             {
                 instructs.Add(10);
-            } 
+            }
+            listPriamychInstrukcii.Add(10);
         }
         canTrashMove();
         
     }
     public void putLeftCard()
     {
+
         if (startPointX < endPointX && needNumberInCycle == false)
         {
             Instantiate(ltPf, new Vector3(startPointX, startingPoint[1], startingPoint[2]), ltPf.transform.rotation);
@@ -118,6 +121,7 @@ public class sceneScript : MonoBehaviour
             {
                 instructs.Add(12);
             } 
+            listPriamychInstrukcii.Add(12);
         }
         canTrashMove();
         
@@ -133,6 +137,7 @@ public class sceneScript : MonoBehaviour
             {
                 instructs.Add(11);
             } 
+            listPriamychInstrukcii.Add(11);
         }
         canTrashMove();
         
@@ -150,6 +155,7 @@ public class sceneScript : MonoBehaviour
         }
         sizeOfCard = repeatPf.GetComponent<BoxCollider2D>();
         startPointX += sizeOfCard.size[0]/2.5f - distanceForNumber; //doladenie pre polozenie cisla do OPAKUJ karticky
+        listPriamychInstrukcii.Add(7);
         if (cycleRunning.Count != 0)
             {
                 instructs.Add(7);
@@ -168,6 +174,7 @@ public class sceneScript : MonoBehaviour
         }
         
         sizeOfCard = stopRepPf.GetComponent<BoxCollider2D>();
+        listPriamychInstrukcii.Add(8);
         startPointX += sizeOfCard.size[0]/2.5f + distanceBetween;
         canTrashMove();  
     }
@@ -190,6 +197,7 @@ public class sceneScript : MonoBehaviour
             cycleRunning[cycleRunning.Count-1] = numbr;
             cycleRunning2[cycleRunning2.Count-1] = numbr;
             kolkoOpakovaniJeDanych = numbr;
+            listPriamychInstrukcii.Add(numbr);
 
         }
         canTrashMove();
@@ -305,25 +313,32 @@ public class sceneScript : MonoBehaviour
         if (indexOfRepeat == 0)
         {
             if (plannedReserve)
-            {
-            if (skriptikPodmienok.suPodmienky)
-            {
-                KontrolaPodmienok();
-            }
-            else if (skriptikPodmienok.jeTriggerPodmienka && !jeVCieliZelenom)
-            {
-                print("OCH NIE");
-                cervenyTextik.text = "Nedostal si sa do cieľa";
-                bielyTextik.text = "Skús naprogramovať šoka tak, aby sa dostal na zelené políčko. Určite to zvládneš!";
+            {   bool splenePodminecky = true;
+                if (skriptikPodmienok.suPodmienky){splenePodminecky = KontrolaPodmienok(instructs);}
+                if (skriptikPodmienok.jeTriggerPodmienka && !jeVCieliZelenom)
+                {
+                    if (!splenePodminecky)
+                    {
+                        cervenyTextik.text = "Nedostal si sa do cieľa";
+                        bielyTextik.text = bielyTextik.text + "Skús naprogramovať Šoka tak, aby sa dostal na ZELENÉ políčko.";
+                    }
+                    else
+                    {
+                        cervenyTextik.text = "Nedostal si sa do cieľa";
+                        bielyTextik.text = "Skús naprogramovať Šoka tak, aby sa dostal na ZELENÉ políčko.";
+                    }   
+                }
+                else
+                {
+                    if (splenePodminecky)
+                    {
+                        cervenyTextik.font = ziarivyZelenyText;
+                        cervenyTextik.text = "SUPEEEER";
+                        bielyTextik.text = "Hor sa na ďalší level!";
+                        panel.transform.Find("b_NextLevel").gameObject.SetActive(true);
+                    }       
+                }
                 panel.SetActive(true);
-            }
-            else
-            {
-                cervenyTextik.font = ziarivyZelenyText;
-                cervenyTextik.text = "SUPEEEER";
-                bielyTextik.text = "Hor sa na ďalší level!";
-                panel.SetActive(true);
-            }
             }
             instructs.Clear();
             cycleRunning2.Clear();
@@ -385,15 +400,20 @@ public class sceneScript : MonoBehaviour
         persistenceScriptVolume.thisAmbientMusic.GetComponent<AudioSource>().volume = tento.value;
     }
 
-    public void KontrolaPodmienok()
+    public bool KontrolaPodmienok(List<int> listocek)
     {
+        string sklonovanie = "ahoj";
+        if (skriptikPodmienok.podmienkaNaMaxPrikazov)
+        {   if (skriptikPodmienok.maxPrikazov < 5){sklonovanie = " príkazy. ";}
+            else{sklonovanie = " príkazov. ";}
+        }
         if (skriptikPodmienok.naCyklus)
         {
             bool najdenyCyk = false;
             bool spravnyPocetOpak = false;
-            for (int q = 0; q < instructs.Count; q++)
+            for (int q = 0; q < listocek.Count; q++)
             {
-                if(instructs[q] == 7){najdenyCyk = true;} 
+                if(listocek[q] == 7){najdenyCyk = true;} 
                 if(kolkoOpakovaniJeDanych == skriptikPodmienok.kolkoOpakovani){spravnyPocetOpak = true;}
             }
             if (!najdenyCyk || !spravnyPocetOpak)
@@ -401,75 +421,107 @@ public class sceneScript : MonoBehaviour
                 cervenyTextik.text = "Nepoužil si cyklus s počtom opakovaním " + skriptikPodmienok.kolkoOpakovani;
                 if (skriptikPodmienok.podmienkaNaMaxPrikazov)
                 {
-                    bielyTextik.text = "Pozor na podmienky. V tejto úlohe máš zadané, že musíš využiť cyklus, ktorý sa vykoná " + skriptikPodmienok.kolkoOpakovani +"-krát. Tiež môžeš využiť MAXIMÁLNE " +skriptikPodmienok.maxPrikazov + " príkazy/príkazov. Skús tak naprogramovať Šoka. Určite to zvládneš!";
+                    bielyTextik.text = "Pozor na podmienky. V tejto úlohe máš zadané, že musíš využiť cyklus, ktorý sa vykoná " + skriptikPodmienok.kolkoOpakovani +"-krát. Tiež môžeš využiť MAXIMÁLNE " +skriptikPodmienok.maxPrikazov + sklonovanie + "Skús tak naprogramovať Šoka. Určite to zvládneš! ";
                 }
                 else
                 {
-                    bielyTextik.text = "Pozor na podmienky. V tejto úlohe máš zadané, že musíš využiť cyklus, ktorý sa vykoná " + skriptikPodmienok.kolkoOpakovani +"-krát. Skús tak naprogramovať Šoka. Určite to zvládneš!";
+                    bielyTextik.text = "Pozor na podmienky. V tejto úlohe máš zadané, že musíš využiť cyklus, ktorý sa vykoná " + skriptikPodmienok.kolkoOpakovani +"-krát. Skús tak naprogramovať Šoka. Určite to zvládneš! ";
                 }
-                
-                panel.SetActive(true);
-                return;
+                return false;
             }
         }
-        List<int> newInstructs = new List<int>(instructs);
+        List<int> newInstructs = new List<int>(listocek); //tu mam ulozeny povodny list aj s ukoncovanim cyklov (8)
         if (skriptikPodmienok.podmienkaNaMaxPrikazov)
         {
-            while (instructs.Contains(8))
+            while (listocek.Contains(8)) //dam si prec vsetky ukoncenia (8) aby sa to nepocitalo ako prikaz
             {
-                instructs.Remove(8);
+                listocek.Remove(8);
             }
-            if (instructs.Count > skriptikPodmienok.maxPrikazov)
+            listocek.Remove(1); //trochu blby sposob ako zrusit pocet opakovani z priameho programovania
+            listocek.Remove(2); //kedze v nepriamom sa nepocita do "instrukcii" ale do "cykly running"
+            listocek.Remove(3);
+            listocek.Remove(4);
+            listocek.Remove(5);
+            listocek.Remove(6);
+            if (listocek.Count > skriptikPodmienok.maxPrikazov)
             {
+                print("pocet listocek>" + listocek.Count);
+                print("pocet max> " + skriptikPodmienok.maxPrikazov);
                 cervenyTextik.text = "Použil si veľa príkazov";
-                bielyTextik.text = "Pozor na podmienky. V tejto úlohe môžeš využiť maximálne " + skriptikPodmienok.maxPrikazov +" prikazy/príkazov. Ak nevieš, ako sa príkazy počítajú, prečítaj si inštrukcie (klik na tlačidlo). Určite to zvládneš!";
-                panel.SetActive(true);
-                return;
+                bielyTextik.text = "Pozor na podmienky. V tejto úlohe môžeš využiť maximálne " + skriptikPodmienok.maxPrikazov + sklonovanie + "Ak nevieš, ako sa príkazy počítajú, prečítaj si inštrukcie (klik na tlačidlo). Určite to zvládneš! ";
+                return false;
             }
         }
         if (skriptikPodmienok.specifickePodmienky) //ak su specificke podmienky, tak musi byt aj MAX PRIKAZOV!!!!
         {
             
-            newInstructs.RemoveAt(newInstructs.Count-1);
+            if(plannedReserve){newInstructs.RemoveAt(newInstructs.Count-1);} //ak je planovany, tak nech sa posledna 8micka vymaze
             if (newInstructs.Count != skriptikPodmienok.speciPrikazy.Count)
             {
                 cervenyTextik.text = "Nemáš to správne vyriešené :(";
-                bielyTextik.text = "Pozor na podmienky v úlohe. Je presne dané, akou postupnosťou sa má Šoko správať. Určite to zvládneš!";
-                panel.SetActive(true);
-                return;
+                bielyTextik.text = "Pozor na podmienky v úlohe. Je presne dané, akou postupnosťou sa má Šoko správať. Určite to zvládneš! ";
+                return false;
             }
             for (int prikazik = 0; prikazik < skriptikPodmienok.speciPrikazy.Count-1; prikazik++)
             {
-                if (instructs[prikazik] != skriptikPodmienok.speciPrikazy[prikazik])
+                if (newInstructs[prikazik] != skriptikPodmienok.speciPrikazy[prikazik])
                 {
                     cervenyTextik.text = "Nemáš to správne vyriešené :(";
-                    bielyTextik.text = "Pozor na podmienky v úlohe. Je presne dané, akou postupnosťou sa má Šoko správať. Určite to zvládneš!";
-                    panel.SetActive(true);
-                    return;
+                    bielyTextik.text = "Pozor na podmienky v úlohe. Je presne dané, akou postupnosťou sa má Šoko správať. Určite to zvládneš! ";
+                    return false;
                 }
             }
         }
         cervenyTextik.font = ziarivyZelenyText;
         cervenyTextik.text = "SUPEEEER";
         bielyTextik.text = "Hor sa na ďalší level!";
-        panel.SetActive(true);
-        panel.transform.Find("b_NextLevel").gameObject.SetActive(true);
+        return true;
     }
 
     private void ZmenaTextuPodmienok()
     {   string sklonovanie = "ahoj";
         if (skriptikPodmienok.podmienkaNaMaxPrikazov)
-        {   if (skriptikPodmienok.maxPrikazov < 5){sklonovanie = " príkazy.";}
-            else{sklonovanie = " príkazov.";}
+        {   if (skriptikPodmienok.maxPrikazov < 5){sklonovanie = " príkazy. ";}
+            else{sklonovanie = " príkazov. ";}
         }
         podmienkovyText.text = "PODMIENKY: ";
-        if (skriptikPodmienok.jeTriggerPodmienka){podmienkovyText.text += "Dostaň sa na zelený cieľ.";}
+        if (skriptikPodmienok.jeTriggerPodmienka){podmienkovyText.text += "Dostaň sa na zelený cieľ. ";}
         if (skriptikPodmienok.suPodmienky)
         {
             if (skriptikPodmienok.naCyklus){podmienkovyText.text+= "Použi cyklus s počtom opakovaní: " + skriptikPodmienok.kolkoOpakovani + ". ";}
             if (skriptikPodmienok.podmienkaNaMaxPrikazov){podmienkovyText.text += "Môžeš využiť max. " + skriptikPodmienok.maxPrikazov + sklonovanie;}
             if (skriptikPodmienok.specifickePodmienky){
-                podmienkovyText.text = skriptikPodmienok.speciPrikazyText + " Môžeš využiť max. " + skriptikPodmienok.maxPrikazov + sklonovanie;}
+                podmienkovyText.text = skriptikPodmienok.speciPrikazyText + "Môžeš využiť max. " + skriptikPodmienok.maxPrikazov + sklonovanie;}
         }
     }
+    public void OvereniePriamy()
+    {
+        bool splnenysen = true;
+        if (skriptikPodmienok.suPodmienky){splnenysen = KontrolaPodmienok(listPriamychInstrukcii);}
+        if (skriptikPodmienok.jeTriggerPodmienka && !jeVCieliZelenom)
+        {
+            if (!splnenysen)
+            {
+                cervenyTextik.text = "Nedostal si sa do cieľa";
+                bielyTextik.text = bielyTextik.text + "Skús naprogramovať Šoka tak, aby sa dostal na ZELENÉ políčko. ";
+            }
+            else
+            {
+                cervenyTextik.text = "Nedostal si sa do cieľa";
+                bielyTextik.text = "Skús naprogramovať Šoka tak, aby sa dostal na ZELENÉ políčko. ";
+            }   
+        }
+        else
+        {
+            if (splnenysen)
+            {
+                cervenyTextik.font = ziarivyZelenyText;
+                cervenyTextik.text = "SUPEEEER";
+                bielyTextik.text = "Hor sa na ďalší level!";
+                panel.transform.Find("b_NextLevel").gameObject.SetActive(true);
+            }       
+        }
+        panel.SetActive(true);
+    }
+    
 }

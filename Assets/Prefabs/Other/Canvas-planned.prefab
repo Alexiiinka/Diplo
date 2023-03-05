@@ -973,7 +973,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1369336952011040346, guid: 90fcad726fc615a4f81c2a8ea17ba720, type: 3}
       propertyPath: m_Color.a
-      value: 0.8509804
+      value: 0.9411765
       objectReference: {fileID: 0}
     - target: {fileID: 1369336952011040346, guid: 90fcad726fc615a4f81c2a8ea17ba720, type: 3}
       propertyPath: m_Color.b
@@ -1261,7 +1261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1099380291, guid: db2bdd06e97de924791913aa3bd96e22, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.4949495
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1099380291, guid: db2bdd06e97de924791913aa3bd96e22, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1293,7 +1293,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1546223478, guid: db2bdd06e97de924791913aa3bd96e22, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.4949495
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1546223478, guid: db2bdd06e97de924791913aa3bd96e22, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1301,7 +1301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1546223478, guid: db2bdd06e97de924791913aa3bd96e22, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.4949495
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1546223478, guid: db2bdd06e97de924791913aa3bd96e22, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1443,6 +1443,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Panel_menu
       objectReference: {fileID: 0}
+    - target: {fileID: 4449530025224520339, guid: db2bdd06e97de924791913aa3bd96e22, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4449530025389985072, guid: db2bdd06e97de924791913aa3bd96e22, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1465,6 +1469,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4449530025867375565, guid: db2bdd06e97de924791913aa3bd96e22, type: 3}
       propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4449530026023315187, guid: db2bdd06e97de924791913aa3bd96e22, type: 3}
+      propertyPath: m_text
+      value: "In\u0161trukcie"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4449530026023315187, guid: db2bdd06e97de924791913aa3bd96e22, type: 3}
+      propertyPath: m_fontStyle
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

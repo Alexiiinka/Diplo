@@ -72,6 +72,10 @@ public class trashMove : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         scriptSc.jeVCieliZelenom = true;
-        print("Je tady");
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        scriptSc.jeVCieliZelenom = false;
     }
 }
