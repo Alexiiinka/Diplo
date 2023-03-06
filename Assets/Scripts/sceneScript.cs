@@ -27,6 +27,7 @@ public class sceneScript : MonoBehaviour
     public GameObject panel;
     public GameObject tile;
     public GameObject tileTrigerko;
+    public GameObject tileCesticka;
     public int muchTilesX = 4, muchTilesY = 4; 
     public float stepTiles = 2.8f, leftDownTileX = -11.0f, leftDownTileY = -4.0f;
     public float trashSpeed = 0.5f;
@@ -79,7 +80,21 @@ public class sceneScript : MonoBehaviour
                 }
                 else
                 {
-                    Instantiate(tile, new Vector3(leftDownTileX + i*stepTiles, leftDownTileY + j*stepTiles, 0), tile.transform.rotation);
+                    if (skriptikPodmienok.jeCesticka)
+                    {
+                        if (skriptikPodmienok.cesticka.Contains(new Vector2Int(i,j)))
+                        {
+                            Instantiate(tileCesticka, new Vector3(leftDownTileX + i*stepTiles, leftDownTileY + j*stepTiles, 0), tile.transform.rotation);
+                        }
+                        else
+                        {
+                            Instantiate(tile, new Vector3(leftDownTileX + i*stepTiles, leftDownTileY + j*stepTiles, 0), tile.transform.rotation);
+                        }  
+                    }
+                    else
+                    {
+                        Instantiate(tile, new Vector3(leftDownTileX + i*stepTiles, leftDownTileY + j*stepTiles, 0), tile.transform.rotation);
+                    } 
                 }
             }
         }

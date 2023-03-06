@@ -19,6 +19,10 @@ public class podmienkyScript : MonoBehaviour
     //-- zapis instrukcii -- 1-6> pocet opakovani, 7-zac. opak, 8-koniec opak., 10-fd, 11-right, 12-left
     public List<int> speciPrikazy;
     public string speciPrikazyText;
+    [Header("Vyznacena cesticka")]
+    public bool jeCesticka = false;
+    public List<Vector2Int> cesticka;
+     
 
     // Start is called before the first frame update
     void Start()

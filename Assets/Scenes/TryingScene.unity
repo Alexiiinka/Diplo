@@ -143,14 +143,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1495597497}
     - target: {fileID: 2256412898677659641, guid: bf02561dd86d6934b875e47411e0542e, type: 3}
-      propertyPath: canMove
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2256412898677659641, guid: bf02561dd86d6934b875e47411e0542e, type: 3}
-      propertyPath: planned
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2256412898677659641, guid: bf02561dd86d6934b875e47411e0542e, type: 3}
       propertyPath: slVolume
       value: 
       objectReference: {fileID: 1495597496}
@@ -341,7 +333,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3881719499825541639, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
       propertyPath: naCyklus
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881719499825541639, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
+      propertyPath: jeCesticka
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3881719499825541639, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
       propertyPath: maxPrikazov
@@ -349,7 +345,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3881719499825541639, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
       propertyPath: suPodmienky
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3881719499825541639, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
       propertyPath: kolkoOpakovani
@@ -357,7 +353,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3881719499825541639, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
       propertyPath: jeTriggerPodmienka
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881719499825541639, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
+      propertyPath: cesticka.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3881719499825541639, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
       propertyPath: specifickePodmienky
@@ -365,7 +365,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3881719499825541639, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
       propertyPath: podmienkaNaMaxPrikazov
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881719499825541639, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
+      propertyPath: cesticka.Array.data[0].y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881719499825541639, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
+      propertyPath: cesticka.Array.data[1].y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881719499825541639, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
+      propertyPath: cesticka.Array.data[2].y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881719499825541639, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
+      propertyPath: cesticka.Array.data[3].x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881719499825541639, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
+      propertyPath: cesticka.Array.data[3].y
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3881719499825541640, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
       propertyPath: m_RootOrder

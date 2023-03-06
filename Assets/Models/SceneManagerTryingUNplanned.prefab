@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f398eb2557dae2a4b9b646be9f4fb597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planned: 1
+  planned: 0
   fdPf: {fileID: 4812984332331388159, guid: b32e150d753521e4ab3793219038467d, type: 3}
   ltPf: {fileID: 1642592571470512945, guid: f8177b2b77520fd4881db0a878e54ca6, type: 3}
   rtPf: {fileID: 3686706980118316605, guid: 9488b3a096cf3a243bbb852f03237da9, type: 3}
@@ -79,6 +79,7 @@ MonoBehaviour:
   panel: {fileID: 0}
   tile: {fileID: 3525091218429742023, guid: 0dfc01faec0b38942984a7b1ac1ca7b0, type: 3}
   tileTrigerko: {fileID: 3525091218429742023, guid: ec10cf14b1769b34a8029ff9e683283f, type: 3}
+  tileCesticka: {fileID: 3525091218429742023, guid: 4d038b49f28e63642a05b4fb913d0eb7, type: 3}
   muchTilesX: 4
   muchTilesY: 4
   stepTiles: 2.8
