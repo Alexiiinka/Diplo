@@ -7,6 +7,7 @@ using TMPro;
 
 public class sceneScript : MonoBehaviour
 {
+    public GameObject trashik;
     public bool planned = false;
     private bool plannedReserve = false;
     public GameObject fdPf, ltPf, rtPf, repeatPf, stopRepPf, repeatPfv, stopRepPfv, onePf, twoPf, threePf, fourPf, fivePf, sixPf ; //forwardPrefab etc.. 
@@ -52,7 +53,8 @@ public class sceneScript : MonoBehaviour
     void Start()
     {
         startPointX = startingPoint[0];
-        trashSc = GameObject.Find("KosZhora+Checker").GetComponent<trashMove>();
+        //trashSc = GameObject.Find("KosZhora+Checker").GetComponent<trashMove>();
+        trashSc = trashik.GetComponent<trashMove>();
         //checkingSpaceScript = checker.GetComponent<checkSpace>();
         cycleRunning = new List<int>();
         cycleRunning2 = new List<int>();
@@ -413,6 +415,7 @@ public class sceneScript : MonoBehaviour
     public void ChangeOfSpeed()
     {
         trashSpeed = Trspeed.value;
+        print(trashSpeed);
         persistenceScript.trashikSpeed = trashSpeed;
     }
     public void ChangeOfVolume(Slider tento)
@@ -544,6 +547,10 @@ public class sceneScript : MonoBehaviour
             }       
         }
         panel.SetActive(true);
+    }
+    public void ZmenScenu(string dalsia)
+    {
+        SceneManager.LoadScene(dalsia);
     }
     
 }

@@ -867,6 +867,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5285925827021016822, guid: 750c061717f467b45936025c8253ad9a, type: 3}
+      propertyPath: m_text
+      value: "In\u0161trukcie"
+      objectReference: {fileID: 0}
     - target: {fileID: 5285925827084730788, guid: 750c061717f467b45936025c8253ad9a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 5

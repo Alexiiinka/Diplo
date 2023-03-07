@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class trashMove : MonoBehaviour
 {
-    public float moveDistance = 2.8f;
-    public float maxLeft = -13.0f, maxRight = -0.7f, maxUp = 10.0f , maxDown = -6.3f ;
+    private float moveDistance = 2.8f;
+    private float maxLeft = -13.0f, maxRight = -0.7f, maxUp = 10.0f , maxDown = -6.3f ;
     Rigidbody trashRb;
     private Vector3 previousPos, newPos;
     private checkSpace checkingSpaceScript;
@@ -17,6 +17,12 @@ public class trashMove : MonoBehaviour
         trashRb = gameObject.GetComponent<Rigidbody>();
         checkingSpaceScript = checker.GetComponent<checkSpace>();
         scriptSc = GameObject.Find("SceneManager").GetComponent<sceneScript>();
+        moveDistance = scriptSc.stepTiles;
+        maxLeft = scriptSc.leftDownTileX - 0.5f;
+        maxDown = scriptSc.leftDownTileY - 0.5f;
+        maxRight = scriptSc.leftDownTileX + (scriptSc.muchTilesX - 1)*moveDistance + 0.5f;
+        maxUp = scriptSc.leftDownTileY + (scriptSc.muchTilesY - 1)*moveDistance + 0.5f;
+
     }
 
     // void FixedUpdate()

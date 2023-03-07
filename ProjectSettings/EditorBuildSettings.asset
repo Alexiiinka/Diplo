@@ -20,7 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Urovne.unity
     guid: 00d65e92481b96a4d9b4997437b5ff72
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/TryingScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/TryingScene_planned.unity
+    guid: 8f12d9545aed2c14c9c2cecafa2f21bb
   m_configObjects: {}
