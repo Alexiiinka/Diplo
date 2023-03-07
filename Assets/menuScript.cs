@@ -18,4 +18,9 @@ public class menuScript : MonoBehaviour
         persistenceScript.volume = tento.value;
         persistenceScriptVolume.thisAmbientMusic.GetComponent<AudioSource>().volume = tento.value;
     }
+
+    public void DajNovuScenu(string dalsiaScena)
+    {
+        SceneManager.LoadScene(dalsiaScena);
+    }
 }

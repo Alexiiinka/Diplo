@@ -22,17 +22,8 @@ public class podmienkyScript : MonoBehaviour
     [Header("Vyznacena cesticka")]
     public bool jeCesticka = false;
     public List<Vector2Int> cesticka;
+    [Header("Flase")]
+    public bool jeOdpad = false;
+    public List<Vector2Int> odpadky;
      
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -96,3 +96,6 @@ MonoBehaviour:
   ziarivyZelenyText: {fileID: 11400000, guid: f12d8aa95535bce40958b871fe2adda3, type: 2}
   jeVCieliZelenom: 0
   podmienkovyText: {fileID: 0}
+  odpadPf:
+  - {fileID: 6921539224160355730, guid: 654b692e528258c4898f6ce8541b05a9, type: 3}
+  - {fileID: 7285746436631824147, guid: 0e3c21fdd72a6cd4885e34535cec61af, type: 3}

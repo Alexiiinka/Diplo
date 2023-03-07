@@ -47,11 +47,20 @@ MonoBehaviour:
   jeTriggerPodmienka: 0
   kolkaX: 3
   kolkaY: 0
-  suPodmienky: 1
-  naCyklus: 1
-  kolkoOpakovani: 5
-  podmienkaNaMaxPrikazov: 1
-  maxPrikazov: 2
-  specifickePodmienky: 1
+  suPodmienky: 0
+  naCyklus: 0
+  kolkoOpakovani: 3
+  podmienkaNaMaxPrikazov: 0
+  maxPrikazov: 3
+  specifickePodmienky: 0
   speciPrikazy: 070000000b00000008000000
   speciPrikazyText: "Oto\u010D sa p\xE4\u0165kr\xE1t doprava."
+  jeCesticka: 0
+  cesticka:
+  - {x: 0, y: 0}
+  - {x: 0, y: 1}
+  - {x: 0, y: 2}
+  - {x: 1, y: 2}
+  jeOdpad: 1
+  odpadky:
+  - {x: 2, y: 1}

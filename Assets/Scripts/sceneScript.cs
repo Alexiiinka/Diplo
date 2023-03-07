@@ -44,6 +44,9 @@ public class sceneScript : MonoBehaviour
     private List<int> listPriamychInstrukcii = new List<int>(); // na kontrolu priameho rezimu - overenie - pre podmienky dane
     //private checkSpace checkingSpaceScript;
     //public GameObject checker;
+    [Header("Prefaby odpadkov")]
+    public List<GameObject> odpadPf;
+
 
     // Start is called before the first frame update
     void Start()
@@ -95,6 +98,10 @@ public class sceneScript : MonoBehaviour
                     {
                         Instantiate(tile, new Vector3(leftDownTileX + i*stepTiles, leftDownTileY + j*stepTiles, 0), tile.transform.rotation);
                     } 
+                }
+                if (skriptikPodmienok.jeOdpad && skriptikPodmienok.odpadky.Contains(new Vector2Int(i,j)))
+                {
+                    Instantiate(odpadPf[Random.Range(0,odpadPf.Count)], new Vector3(leftDownTileX + i*stepTiles, leftDownTileY + j*stepTiles + 0.5f, -1),odpadPf[0].transform.rotation);
                 }
             }
         }

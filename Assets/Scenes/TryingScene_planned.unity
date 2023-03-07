@@ -1055,6 +1055,18 @@ PrefabInstance:
       propertyPath: ziarivyZelenyText
       value: 
       objectReference: {fileID: 11400000, guid: f12d8aa95535bce40958b871fe2adda3, type: 2}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: odpadPf.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: odpadPf.Array.data[0]
+      value: 
+      objectReference: {fileID: 6921539224160355730, guid: 654b692e528258c4898f6ce8541b05a9, type: 3}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: odpadPf.Array.data[1]
+      value: 
+      objectReference: {fileID: 7285746436631824147, guid: 0e3c21fdd72a6cd4885e34535cec61af, type: 3}
     - target: {fileID: 2256412898677659642, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1129,8 +1141,28 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3881719499825541639, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
+      propertyPath: odpadky.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881719499825541639, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
       propertyPath: specifickePodmienky
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881719499825541639, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
+      propertyPath: odpadky.Array.data[1].x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881719499825541639, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
+      propertyPath: odpadky.Array.data[1].y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881719499825541639, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
+      propertyPath: odpadky.Array.data[2].x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881719499825541639, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
+      propertyPath: odpadky.Array.data[2].y
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3881719499825541639, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
       propertyPath: speciPrikazy.Array.size

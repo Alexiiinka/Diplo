@@ -84,6 +84,9 @@ public class trashMove : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        scriptSc.jeVCieliZelenom = false;
+        if (other.tag != "Odpad")
+        {
+            scriptSc.jeVCieliZelenom = false;
+        }
     }
 }
