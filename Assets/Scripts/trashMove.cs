@@ -71,7 +71,15 @@ public class trashMove : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        scriptSc.jeVCieliZelenom = true;
+        if (other.tag == "Odpad")
+        {
+            print("juhu");
+            Destroy(other.gameObject);
+        }
+        else
+        {
+            scriptSc.jeVCieliZelenom = true;
+        }
     }
 
     void OnTriggerExit(Collider other)
