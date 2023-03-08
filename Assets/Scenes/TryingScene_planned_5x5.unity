@@ -231,6 +231,18 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1785732866166300936, guid: eb8759f7c52b5d7499cca073321bed4e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.81438
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785732866166300936, guid: eb8759f7c52b5d7499cca073321bed4e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.81438
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785732866166300936, guid: eb8759f7c52b5d7499cca073321bed4e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.81438
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785732866166300936, guid: eb8759f7c52b5d7499cca073321bed4e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.989983
       objectReference: {fileID: 0}
@@ -240,7 +252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1785732866166300936, guid: eb8759f7c52b5d7499cca073321bed4e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.6581846
+      value: -1.04
       objectReference: {fileID: 0}
     - target: {fileID: 1785732866166300936, guid: eb8759f7c52b5d7499cca073321bed4e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -277,6 +289,10 @@ PrefabInstance:
     - target: {fileID: 1785732866166300950, guid: eb8759f7c52b5d7499cca073321bed4e, type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785732866644453521, guid: eb8759f7c52b5d7499cca073321bed4e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb8759f7c52b5d7499cca073321bed4e, type: 3}
@@ -1252,6 +1268,10 @@ PrefabInstance:
       value: SceneManager
       objectReference: {fileID: 0}
     - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: tile
+      value: 
+      objectReference: {fileID: 7404891494272771133, guid: e99879ed52e92bb488a0d014630df61a, type: 3}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
       propertyPath: panel
       value: 
       objectReference: {fileID: 267157776}
@@ -1272,9 +1292,21 @@ PrefabInstance:
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: stepTiles
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
       propertyPath: b_StopButt
       value: 
       objectReference: {fileID: 1889973725}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: muchTilesX
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: muchTilesY
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
       propertyPath: bielyTextik
       value: 
@@ -1290,11 +1322,11 @@ PrefabInstance:
     - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
       propertyPath: tileCesticka
       value: 
-      objectReference: {fileID: 3525091218429742023, guid: 4d038b49f28e63642a05b4fb913d0eb7, type: 3}
+      objectReference: {fileID: 7404891494272771133, guid: 31db6244221ef98419a6cc908dd4eece, type: 3}
     - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
       propertyPath: tileTrigerko
       value: 
-      objectReference: {fileID: 3525091218429742023, guid: ec10cf14b1769b34a8029ff9e683283f, type: 3}
+      objectReference: {fileID: 7404891494272771133, guid: 656e69ce63ca44542885c2a2e777c1db, type: 3}
     - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
       propertyPath: cervenyTextik
       value: 

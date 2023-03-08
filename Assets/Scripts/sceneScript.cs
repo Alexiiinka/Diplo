@@ -39,10 +39,11 @@ public class sceneScript : MonoBehaviour
     public int kolkoOpakovaniJeDanych = -1;
     public TextMeshProUGUI cervenyTextik; //text co sa objavi ak nieco nebolo splnene - vystrazny
     public TextMeshProUGUI bielyTextik; // text ako nad nim, ale biely - doplnkovy, vysvetlovaci
+    public TextMeshProUGUI levelCisloTextik; // text ako nad nim, ale biely - doplnkovy, vysvetlovaci
     public TMP_FontAsset ziarivyZelenyText;
     public bool jeVCieliZelenom = false;
     public TextMeshProUGUI podmienkovyText;
-    private List<int> listPriamychInstrukcii = new List<int>(); // na kontrolu priameho rezimu - overenie - pre podmienky dane
+    public List<int> listPriamychInstrukcii = new List<int>(); // na kontrolu priameho rezimu - overenie - pre podmienky dane
     //private checkSpace checkingSpaceScript;
     //public GameObject checker;
     [Header("Prefaby odpadkov")]
@@ -71,6 +72,7 @@ public class sceneScript : MonoBehaviour
         trashSpeed = persistenceScript.trashikSpeed;
         Trspeed.value = persistenceScript.trashikSpeed;
         slVolume.value = persistenceScript.volume;
+        levelCisloTextik.text = "Level: " + SceneManager.GetActiveScene().name;
     }
 
     private void MakeTiles()
@@ -103,7 +105,7 @@ public class sceneScript : MonoBehaviour
                 }
                 if (skriptikPodmienok.jeOdpad && skriptikPodmienok.odpadky.Contains(new Vector2Int(i,j)))
                 {
-                    Instantiate(odpadPf[Random.Range(0,odpadPf.Count)], new Vector3(leftDownTileX + i*stepTiles, leftDownTileY + j*stepTiles + 0.5f, -1),odpadPf[0].transform.rotation);
+                    Instantiate(odpadPf[Random.Range(0,odpadPf.Count)], new Vector3(leftDownTileX + i*stepTiles, leftDownTileY + j*stepTiles + 0.3f, -1),odpadPf[0].transform.rotation);
                 }
             }
         }
@@ -415,12 +417,10 @@ public class sceneScript : MonoBehaviour
     public void ChangeOfSpeed()
     {
         trashSpeed = Trspeed.value;
-        print(trashSpeed);
         persistenceScript.trashikSpeed = trashSpeed;
     }
     public void ChangeOfVolume(Slider tento)
     {
-        print("vykon");
         persistenceScript.volume = tento.value;
         persistenceScriptVolume.thisAmbientMusic.GetComponent<AudioSource>().volume = tento.value;
     }
@@ -461,13 +461,12 @@ public class sceneScript : MonoBehaviour
             while (listocek.Contains(8)) //dam si prec vsetky ukoncenia (8) aby sa to nepocitalo ako prikaz
             {
                 listocek.Remove(8);
+                for (int i = 1; i < 7; i++)
+                {
+                    newInstructs.Remove(i);
+                    listocek.Remove(i);//trochu blby sposob ako zrusit pocet opakovani z priameho programovania
+                }//kedze v nepriamom sa nepocita do "instrukcii" ale do "cykly running"
             }
-            listocek.Remove(1); //trochu blby sposob ako zrusit pocet opakovani z priameho programovania
-            listocek.Remove(2); //kedze v nepriamom sa nepocita do "instrukcii" ale do "cykly running"
-            listocek.Remove(3);
-            listocek.Remove(4);
-            listocek.Remove(5);
-            listocek.Remove(6);
             if (listocek.Count > skriptikPodmienok.maxPrikazov)
             {
                 print("pocet listocek>" + listocek.Count);
@@ -479,10 +478,9 @@ public class sceneScript : MonoBehaviour
         }
         if (skriptikPodmienok.specifickePodmienky) //ak su specificke podmienky, tak musi byt aj MAX PRIKAZOV!!!!
         {
-            
             if(plannedReserve){newInstructs.RemoveAt(newInstructs.Count-1);} //ak je planovany, tak nech sa posledna 8micka vymaze
             if (newInstructs.Count != skriptikPodmienok.speciPrikazy.Count)
-            {
+            {   
                 cervenyTextik.text = "Nemáš to správne vyriešené :(";
                 bielyTextik.text = "Pozor na podmienky v úlohe. Je presne dané, akou postupnosťou sa má Šoko správať. Určite to zvládneš! ";
                 return false;
