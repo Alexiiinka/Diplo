@@ -48,11 +48,16 @@ public class sceneScript : MonoBehaviour
     //public GameObject checker;
     [Header("Prefaby odpadkov")]
     public List<GameObject> odpadPf;
+    [Header("Je VIDEO")]
+    public bool jeVideo = false;
+    public GameObject panelInfoVideo;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+        if (jeVideo){panelInfoVideo.SetActive(true);}
         startPointX = startingPoint[0];
         //trashSc = GameObject.Find("KosZhora+Checker").GetComponent<trashMove>();
         trashSc = trashik.GetComponent<trashMove>();
@@ -69,6 +74,7 @@ public class sceneScript : MonoBehaviour
          RepeatCycle();   
         }
         if (skriptikPodmienok.suPodmienky || skriptikPodmienok.jeTriggerPodmienka){ZmenaTextuPodmienok();}
+        else{podmienkovyText.text = skriptikPodmienok.textPreDusu;}
         trashSpeed = persistenceScript.trashikSpeed;
         Trspeed.value = persistenceScript.trashikSpeed;
         slVolume.value = persistenceScript.volume;
@@ -120,52 +126,54 @@ public class sceneScript : MonoBehaviour
     }
 
     public void putFdCard()
-    {
+    {   canTrashMove();
         if (startPointX < endPointX && needNumberInCycle == false)
         {
             Instantiate(fdPf, new Vector3(startPointX, startingPoint[1], startingPoint[2]), fdPf.transform.rotation);
             sizeOfCard = fdPf.GetComponent<BoxCollider2D>();
-            startPointX += sizeOfCard.size[0]/2.5f + distanceBetween;
             if (cycleRunning.Count != 0)
             {
                 instructs.Add(10);
             }
             listPriamychInstrukcii.Add(10);
+            startPointX += sizeOfCard.size[0]/2.5f + distanceBetween;
         }
-        canTrashMove();
         
     }
     public void putLeftCard()
     {
-
+        canTrashMove();
         if (startPointX < endPointX && needNumberInCycle == false)
         {
             Instantiate(ltPf, new Vector3(startPointX, startingPoint[1], startingPoint[2]), ltPf.transform.rotation);
             sizeOfCard = ltPf.GetComponent<BoxCollider2D>();
-            startPointX += sizeOfCard.size[0]/2.5f + distanceBetween;
             if (cycleRunning.Count != 0)
             {
                 instructs.Add(12);
             } 
             listPriamychInstrukcii.Add(12);
+            
+            startPointX += sizeOfCard.size[0]/2.5f + distanceBetween;
         }
-        canTrashMove();
+        
         
     }
     public void putRightCard()
     {
+        canTrashMove();
         if (startPointX < endPointX && needNumberInCycle == false)
         {
             Instantiate(rtPf, new Vector3(startPointX, startingPoint[1], startingPoint[2]), rtPf.transform.rotation);
             sizeOfCard = rtPf.GetComponent<BoxCollider2D>();
-            startPointX += sizeOfCard.size[0]/2.5f + distanceBetween;
             if (cycleRunning.Count != 0)
             {
                 instructs.Add(11);
             } 
             listPriamychInstrukcii.Add(11);
+            
+            startPointX += sizeOfCard.size[0]/2.5f + distanceBetween;
         }
-        canTrashMove();
+        
         
     }
     public void putRepeatCard()
@@ -218,15 +226,14 @@ public class sceneScript : MonoBehaviour
         {
             Instantiate(prefabNum, new Vector3(startPointX, startingPoint[1], startingPoint[2]), prefabNum.transform.rotation);
             sizeOfCard = prefabNum.GetComponent<BoxCollider2D>();
-            startPointX += sizeOfCard.size[0]/2.5f + distanceBetween;
             needNumberInCycle = false;
             cycleRunning[cycleRunning.Count-1] = numbr;
             cycleRunning2[cycleRunning2.Count-1] = numbr;
             kolkoOpakovaniJeDanych = numbr;
             listPriamychInstrukcii.Add(numbr);
-
+            canTrashMove();
+            startPointX += sizeOfCard.size[0]/2.5f + distanceBetween;
         }
-        canTrashMove();
     }
 
     public void RepeatCycle()

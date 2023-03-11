@@ -244,7 +244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1785732866166300936, guid: eb8759f7c52b5d7499cca073321bed4e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.989983
+      value: -10.7
       objectReference: {fileID: 0}
     - target: {fileID: 1785732866166300936, guid: eb8759f7c52b5d7499cca073321bed4e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -645,6 +645,10 @@ PrefabInstance:
     - target: {fileID: 4183188825118064460, guid: cbb8dd85f406d3a44abd1d7a4867543f, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183188825118064460, guid: cbb8dd85f406d3a44abd1d7a4867543f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.925
       objectReference: {fileID: 0}
     - target: {fileID: 4183188825118064460, guid: cbb8dd85f406d3a44abd1d7a4867543f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1169,7 +1173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4174877242310791565, guid: 1e6f1713380ecdf47b1fd8dd71d75034, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -9.497986
+      value: -9.498047
       objectReference: {fileID: 0}
     - target: {fileID: 4174877242310791566, guid: 1e6f1713380ecdf47b1fd8dd71d75034, type: 3}
       propertyPath: m_IsActive
@@ -1328,12 +1332,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2081479636}
     - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: leftDownTileX
+      value: -10.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: maxXforRepeat
+      value: 8.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
       propertyPath: podmienkovyText
       value: 
       objectReference: {fileID: 353242772}
     - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
       propertyPath: startingPoint.x
-      value: -11.5
+      value: -11
       objectReference: {fileID: 0}
     - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
       propertyPath: levelCisloTextik
@@ -1354,11 +1366,11 @@ PrefabInstance:
     - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
       propertyPath: odpadPf.Array.data[0]
       value: 
-      objectReference: {fileID: 6921539224160355730, guid: 654b692e528258c4898f6ce8541b05a9, type: 3}
+      objectReference: {fileID: 835429487467179633, guid: 9a9e48dc7f5f2814fa571d04a0426c7c, type: 3}
     - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
       propertyPath: odpadPf.Array.data[1]
       value: 
-      objectReference: {fileID: 7285746436631824147, guid: 0e3c21fdd72a6cd4885e34535cec61af, type: 3}
+      objectReference: {fileID: 7571133348319148009, guid: 23c249fd49ff8554a8051849523438c3, type: 3}
     - target: {fileID: 2256412898677659642, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
       propertyPath: m_RootOrder
       value: 3

@@ -195,9 +195,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1421747056}
     - target: {fileID: 2256412898677659641, guid: bf02561dd86d6934b875e47411e0542e, type: 3}
+      propertyPath: leftDownTileX
+      value: -10.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659641, guid: bf02561dd86d6934b875e47411e0542e, type: 3}
+      propertyPath: maxXforRepeat
+      value: 8.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659641, guid: bf02561dd86d6934b875e47411e0542e, type: 3}
       propertyPath: podmienkovyText
       value: 
       objectReference: {fileID: 1421747054}
+    - target: {fileID: 2256412898677659641, guid: bf02561dd86d6934b875e47411e0542e, type: 3}
+      propertyPath: startingPoint.x
+      value: -11
+      objectReference: {fileID: 0}
     - target: {fileID: 2256412898677659641, guid: bf02561dd86d6934b875e47411e0542e, type: 3}
       propertyPath: levelCisloTextik
       value: 
@@ -1688,6 +1700,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4183188825118064460, guid: cbb8dd85f406d3a44abd1d7a4867543f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.925
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183188825118064460, guid: cbb8dd85f406d3a44abd1d7a4867543f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.02
       objectReference: {fileID: 0}
@@ -1799,7 +1815,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9192597877850015084, guid: c756aeb7bc7bef44fb4ca8858b155bc1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11
+      value: -10.7
       objectReference: {fileID: 0}
     - target: {fileID: 9192597877850015084, guid: c756aeb7bc7bef44fb4ca8858b155bc1, type: 3}
       propertyPath: m_LocalPosition.y

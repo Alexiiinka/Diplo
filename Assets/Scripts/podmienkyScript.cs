@@ -25,5 +25,7 @@ public class podmienkyScript : MonoBehaviour
     [Header("Flase")]
     public bool jeOdpad = false;
     public List<Vector2Int> odpadky;
+    [Header("Textik pre potechu duse")]
+    public string textPreDusu;
      
 }
