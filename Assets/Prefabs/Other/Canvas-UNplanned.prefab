@@ -1552,7 +1552,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8819868640309198745, guid: 90fcad726fc615a4f81c2a8ea17ba720, type: 3}
       propertyPath: m_text
-      value: "\u010Eal\u0161i level"
+      value: "\u010Eal\u0161\xED level"
       objectReference: {fileID: 0}
     - target: {fileID: 9171341203235833324, guid: 90fcad726fc615a4f81c2a8ea17ba720, type: 3}
       propertyPath: m_SizeDelta.x

@@ -29,6 +29,7 @@ public class sceneScript : MonoBehaviour
     public GameObject tile;
     public GameObject tileTrigerko;
     public GameObject tileCesticka;
+    public GameObject tileStena;
     public int muchTilesX = 4, muchTilesY = 4; 
     public float stepTiles = 2.8f, leftDownTileX = -11.0f, leftDownTileY = -4.0f;
     public float trashSpeed = 0.5f;
@@ -93,21 +94,18 @@ public class sceneScript : MonoBehaviour
                 }
                 else
                 {
-                    if (skriptikPodmienok.jeCesticka)
-                    {
-                        if (skriptikPodmienok.cesticka.Contains(new Vector2Int(i,j)))
+                    if (skriptikPodmienok.jeCesticka && skriptikPodmienok.cesticka.Contains(new Vector2Int(i,j)))
+                    {   Instantiate(tileCesticka, new Vector3(leftDownTileX + i*stepTiles, leftDownTileY + j*stepTiles, 0), tile.transform.rotation);
+                    }
+                    else 
+                    {   if (skriptikPodmienok.jeStena && skriptikPodmienok.stena.Contains(new Vector2Int(i,j)))
                         {
-                            Instantiate(tileCesticka, new Vector3(leftDownTileX + i*stepTiles, leftDownTileY + j*stepTiles, 0), tile.transform.rotation);
+                            Instantiate(tileStena, new Vector3(leftDownTileX + i*stepTiles, leftDownTileY + j*stepTiles, 0), tile.transform.rotation);
                         }
                         else
-                        {
-                            Instantiate(tile, new Vector3(leftDownTileX + i*stepTiles, leftDownTileY + j*stepTiles, 0), tile.transform.rotation);
-                        }  
+                        {   Instantiate(tile, new Vector3(leftDownTileX + i*stepTiles, leftDownTileY + j*stepTiles, 0), tile.transform.rotation);
+                        }
                     }
-                    else
-                    {
-                        Instantiate(tile, new Vector3(leftDownTileX + i*stepTiles, leftDownTileY + j*stepTiles, 0), tile.transform.rotation);
-                    } 
                 }
                 if (skriptikPodmienok.jeOdpad && skriptikPodmienok.odpadky.Contains(new Vector2Int(i,j)))
                 {
@@ -386,12 +384,20 @@ public class sceneScript : MonoBehaviour
         {
             GameObject.Find(butt).GetComponent<Button>().interactable = true;
         }
+        if (!plannedReserve)
+        {
+            GameObject.Find("b_Overit").GetComponent<Button>().interactable = true;
+        }
     }
     private void TurnButtonsUnactive()
     {
         foreach (string butt in new string[] {"b_turnRight","b_turnLeft","b_forward","b_repeat","b_stopRepeat","b_one","b_two","b_three","b_four","b_five","b_six"})
         {
             GameObject.Find(butt).GetComponent<Button>().interactable = false;
+        }
+        if (!plannedReserve)
+        {
+            GameObject.Find("b_Overit").GetComponent<Button>().interactable = false;
         }
     }
 
@@ -502,7 +508,7 @@ public class sceneScript : MonoBehaviour
                 }
             }
         }
-        cervenyTextik.font = ziarivyZelenyText;
+        //cervenyTextik.font = ziarivyZelenyText;
         cervenyTextik.text = "SUPEEEER";
         bielyTextik.text = "Hor sa na ďalší level!";
         return true;

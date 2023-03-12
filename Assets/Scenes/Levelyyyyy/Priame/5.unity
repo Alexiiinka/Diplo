@@ -148,7 +148,7 @@ PrefabInstance:
       objectReference: {fileID: 1495597497}
     - target: {fileID: 2256412898677659641, guid: bf02561dd86d6934b875e47411e0542e, type: 3}
       propertyPath: jeVideo
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2256412898677659641, guid: bf02561dd86d6934b875e47411e0542e, type: 3}
       propertyPath: trashik
@@ -490,7 +490,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3881719499825541639, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
       propertyPath: suPodmienky
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3881719499825541639, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
       propertyPath: speciPrikazyText
@@ -510,7 +510,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3881719499825541639, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
       propertyPath: podmienkaNaMaxPrikazov
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3881719499825541639, guid: 736c9b00833457e4a859f883e746abd1, type: 3}
       propertyPath: odpadky.Array.data[0].x
@@ -1738,7 +1738,7 @@ VideoPlayer:
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 0
   m_WaitForFirstFrame: 1

@@ -22,6 +22,9 @@ public class podmienkyScript : MonoBehaviour
     [Header("Vyznacena cesticka")]
     public bool jeCesticka = false;
     public List<Vector2Int> cesticka;
+    [Header("STENA")]
+    public bool jeStena = false;
+    public List<Vector2Int> stena;
     [Header("Flase")]
     public bool jeOdpad = false;
     public List<Vector2Int> odpadky;

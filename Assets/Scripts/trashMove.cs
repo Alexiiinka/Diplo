@@ -35,6 +35,7 @@ public class trashMove : MonoBehaviour
 
     public void moveFd()
     {
+        print("Vykonaj dopredu");
         if (scriptSc.canMove && checkingSpaceScript.freeSpace)
         {
             newPos = trashRb.position + transform.up * moveDistance;
@@ -79,18 +80,19 @@ public class trashMove : MonoBehaviour
     {
         if (other.tag == "Odpad")
         {
-            print("juhu");
             Destroy(other.gameObject);
         }
         else
-        {
-            scriptSc.jeVCieliZelenom = true;
+        {   if (other.tag != "Stena")
+            {
+                scriptSc.jeVCieliZelenom = true;
+            }
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (other.tag != "Odpad")
+        if (other.tag != "Odpad" && other.tag != "Stena")
         {
             scriptSc.jeVCieliZelenom = false;
         }
