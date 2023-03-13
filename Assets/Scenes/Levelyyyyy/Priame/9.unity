@@ -1429,6 +1429,30 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 68.782
       objectReference: {fileID: 0}
+    - target: {fileID: 3759680203862983767, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3759680203862983767, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1789904173}
+    - target: {fileID: 3759680203862983767, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ZmenScenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3759680203862983767, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: sceneScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3759680203862983767, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Urovne
+      objectReference: {fileID: 0}
+    - target: {fileID: 3759680203862983767, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4025307271826271602, guid: 00870e021e4ddd840818930039d3816c, type: 3}
       propertyPath: m_Color.a
       value: 1

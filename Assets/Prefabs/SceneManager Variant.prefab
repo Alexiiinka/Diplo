@@ -1,0 +1,155 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2751951986123969856
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2256412898677659640, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: m_Name
+      value: SceneManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: panel
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: Trspeed
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: jeVideo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: trashik
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: slVolume
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: endPointX
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: b_StopButt
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: bielyTextik
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: AmbientMusic
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: b_RepeatButt
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: tileCesticka
+      value: 
+      objectReference: {fileID: 3525091218429742023, guid: 4d038b49f28e63642a05b4fb913d0eb7, type: 3}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: tileTrigerko
+      value: 
+      objectReference: {fileID: 3525091218429742023, guid: ec10cf14b1769b34a8029ff9e683283f, type: 3}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: cervenyTextik
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: leftDownTileX
+      value: -10.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: maxXforRepeat
+      value: 8.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: panelInfoVideo
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: podmienkovyText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: startingPoint.x
+      value: -11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: levelCisloTextik
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: skriptikPodmienok
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: ziarivyZelenyText
+      value: 
+      objectReference: {fileID: 11400000, guid: f12d8aa95535bce40958b871fe2adda3, type: 2}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: odpadPf.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: odpadPf.Array.data[0]
+      value: 
+      objectReference: {fileID: 6921539224160355730, guid: 654b692e528258c4898f6ce8541b05a9, type: 3}
+    - target: {fileID: 2256412898677659641, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: odpadPf.Array.data[1]
+      value: 
+      objectReference: {fileID: 7285746436631824147, guid: 0e3c21fdd72a6cd4885e34535cec61af, type: 3}
+    - target: {fileID: 2256412898677659642, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659642, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659642, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659642, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659642, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659642, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659642, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659642, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659642, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659642, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256412898677659642, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ecce66418abfa8e4397b1b3fbf2980ea, type: 3}

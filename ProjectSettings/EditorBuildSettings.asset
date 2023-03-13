@@ -63,108 +63,108 @@ EditorBuildSettings:
     path: Assets/Scenes/Levelyyyyy/Priame/5.unity
     guid: dd61ce87fcb5d8b4095dd885d222b395
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/16.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/13.unity
     guid: 9ee68996497d550459d3373923f13972
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/17.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/14.unity
     guid: 417e930fe8e61eb4abd8707b2275cbaf
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/18.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/15.unity
     guid: 2466ca93d18180246bb474230d8fe93a
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/19.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/16.unity
     guid: 414936a6d5979b04d959d91d660d9ec0
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/20.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/17.unity
     guid: 664ff62383bfd114da9b1319e085329c
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/21.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/18.unity
     guid: c2759a42b904b9b4a8531e0e12dc1efb
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/22.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/19.unity
     guid: 01640cee4c468f6439cefb95f3d52c2e
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/23.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/20.unity
     guid: 3ddde4c9fc3745a45b9e6af0343a22f4
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/24.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/21.unity
     guid: 5477913457cf91e4781cda45ae3b0904
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/25.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/22.unity
     guid: b3f97e8aa26f38a4b923faba1fce31e0
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/26.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/23.unity
     guid: 72d0e33afd9afad49b9a24cd98e53527
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/27.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/24.unity
     guid: 68636e8724d06a74fa3a1cb5c317d4e7
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/28.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/25.unity
     guid: 695294c95183b1d49b76bb243c80db97
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/29.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/26.unity
     guid: 4c54043f1779ea143bb4f6cc65998e93
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/30.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/27.unity
     guid: 664ed116cd0f0dc469e9623d76dbd843
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/31.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/28.unity
     guid: d8e45382c285c444ab9ace177e8a6788
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/32.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/29.unity
     guid: 6adee0b96e9957846a16db1a0ba562ef
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/33.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/30.unity
     guid: 4c11c61faee9f654bb35fbfe4afbc9b6
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/34.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/31.unity
     guid: b4064736686bf454c8e6502a01fd7a15
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/35.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/32.unity
     guid: 73d59a9a30619424091622926c2f02b9
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/36.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/33.unity
     guid: e89ddc9ee4c5ddc438ccb91ee2b4f46f
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/37.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/34.unity
     guid: 3e305adf06a80864a8ac296bd84eb1d0
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/38.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/35.unity
     guid: eb24e0b56818dd442b90236dd61f3107
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/39.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/36.unity
     guid: 8c947b9c3683eb241b5fe5363c57d4a9
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/40.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/37.unity
     guid: 644146d6ffafe624ebe514e5b13cd33f
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/41.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/38.unity
     guid: c5a8133cf2f157a409850e7a8d64f386
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/42.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/39.unity
     guid: 5bdb7b16900b21a4691b4894411aae8d
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/43.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/40.unity
     guid: b2660bb172425844d90c61a8ebc3bbde
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/44.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/41.unity
     guid: 99b4c851fd000944ab1ac6649969f226
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/45.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/42.unity
     guid: a740b8752e05642438bb676684675a31
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/46.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/43.unity
     guid: 5665a6d69e882124fbf0fbee8d290b54
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/47.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/44.unity
     guid: 70b72d0cfd8153845ad520c3dc35c842
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/48.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/45.unity
     guid: 17abb8c159e14e94e98bf7f12a0800a8
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/49.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/46.unity
     guid: 550611e766ad4d94783ef3f90d47d5a3
   - enabled: 1
-    path: Assets/Scenes/Levelyyyyy/Planovane/50.unity
+    path: Assets/Scenes/Levelyyyyy/Planovane/47.unity
     guid: 087eff2b8e38778438c854d4a1291b7e
   m_configObjects: {}
