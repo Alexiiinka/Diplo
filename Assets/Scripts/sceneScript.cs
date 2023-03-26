@@ -12,7 +12,7 @@ public class sceneScript : MonoBehaviour
     private bool plannedReserve = false;
     public GameObject fdPf, ltPf, rtPf, repeatPf, stopRepPf, repeatPfv, stopRepPfv, onePf, twoPf, threePf, fourPf, fivePf, sixPf ; //forwardPrefab etc.. 
     public Vector3 startingPoint = new Vector3(-11.93f, -6.43f, -6.0f); // prvy prikaz do listy prikazov
-    public float distanceBetween = 1.1f, distanceForNumber = 2.0f, tuningOfBigRepeatCard = 1.5f, maxXforRepeat = 10.34f; 
+    public float distanceBetween = 1.1f, distanceForNumber = 2.0f, tuningOfBigRepeatCard = 1.5f, maxXforRepeat = 10.34f, divideForTuning = 2.5f; 
     //vzdialenost medzi kartickami, vzdialenost pre cisla v karticke, doladenie velkej karty repeat, maximalne x pre repeat
     private float startPointX = -11.9f; //startingpoint[0],
     public float endPointX = 12.0f;  //suradnica x pre posledny prikaz v liste prikazov
@@ -134,7 +134,7 @@ public class sceneScript : MonoBehaviour
                 instructs.Add(10);
             }
             listPriamychInstrukcii.Add(10);
-            startPointX += sizeOfCard.size[0]/2.5f + distanceBetween;
+            startPointX += sizeOfCard.size[0]/divideForTuning + distanceBetween;
         }
         
     }
@@ -151,7 +151,7 @@ public class sceneScript : MonoBehaviour
             } 
             listPriamychInstrukcii.Add(12);
             
-            startPointX += sizeOfCard.size[0]/2.5f + distanceBetween;
+            startPointX += sizeOfCard.size[0]/divideForTuning + distanceBetween;
         }
         
         
@@ -169,7 +169,7 @@ public class sceneScript : MonoBehaviour
             } 
             listPriamychInstrukcii.Add(11);
             
-            startPointX += sizeOfCard.size[0]/2.5f + distanceBetween;
+            startPointX += sizeOfCard.size[0]/divideForTuning + distanceBetween;
         }
         
         
@@ -186,7 +186,7 @@ public class sceneScript : MonoBehaviour
             Instantiate(repeatPfv, new Vector3(startPointX, startingPoint[1], startingPoint[2]+0.1f), repeatPfv.transform.rotation);
         }
         sizeOfCard = repeatPf.GetComponent<BoxCollider2D>();
-        startPointX += sizeOfCard.size[0]/2.5f - distanceForNumber; //doladenie pre polozenie cisla do OPAKUJ karticky
+        startPointX += sizeOfCard.size[0]/divideForTuning - distanceForNumber; //doladenie pre polozenie cisla do OPAKUJ karticky
         listPriamychInstrukcii.Add(7);
         if (cycleRunning.Count != 0)
             {
@@ -207,7 +207,7 @@ public class sceneScript : MonoBehaviour
         
         sizeOfCard = stopRepPf.GetComponent<BoxCollider2D>();
         listPriamychInstrukcii.Add(8);
-        startPointX += sizeOfCard.size[0]/2.5f + distanceBetween;
+        startPointX += sizeOfCard.size[0]/divideForTuning + distanceBetween;
         canTrashMove();  
     }
 
@@ -230,7 +230,7 @@ public class sceneScript : MonoBehaviour
             kolkoOpakovaniJeDanych = numbr;
             listPriamychInstrukcii.Add(numbr);
             canTrashMove();
-            startPointX += sizeOfCard.size[0]/2.5f + distanceBetween;
+            startPointX += sizeOfCard.size[0]/divideForTuning + distanceBetween;
         }
     }
 

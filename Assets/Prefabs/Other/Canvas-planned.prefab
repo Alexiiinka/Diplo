@@ -1305,6 +1305,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -206
       objectReference: {fileID: 0}
+    - target: {fileID: 6139276295181517512, guid: 90fcad726fc615a4f81c2a8ea17ba720, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6152918777768918294, guid: 90fcad726fc615a4f81c2a8ea17ba720, type: 3}
       propertyPath: m_Name
       value: Nadpis

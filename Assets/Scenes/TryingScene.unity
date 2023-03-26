@@ -1382,6 +1382,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4212829273037836114, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 233.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212829273037836114, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 679.6002
+      objectReference: {fileID: 0}
     - target: {fileID: 7863917300685363132, guid: 00870e021e4ddd840818930039d3816c, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 862.8
@@ -1780,6 +1788,10 @@ PrefabInstance:
     - target: {fileID: 7165834240083931820, guid: a1668328d3059714ca952a24603b73d8, type: 3}
       propertyPath: m_Name
       value: Cube
+      objectReference: {fileID: 0}
+    - target: {fileID: 7165834240083931820, guid: a1668328d3059714ca952a24603b73d8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1668328d3059714ca952a24603b73d8, type: 3}
