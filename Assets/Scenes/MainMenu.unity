@@ -154,6 +154,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 0}
   AmbientMusic: {fileID: 1201460019}
+  spravnaOdpoved: {x: 0, y: 0}
+  fieldX: {fileID: 0}
+  fieldY: {fileID: 0}
+  pocetik: {fileID: 0}
+  fontik: {fileID: 0}
+  maly: {fileID: 0}
+  velky: {fileID: 0}
+  xAy: 0
+  zadajPocet: 0
+  urciVzor: 0
 --- !u!4 &197316903
 Transform:
   m_ObjectHideFlags: 0
@@ -260,6 +270,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5797612957777465008, guid: def1100351f5427438a1856455d02794, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 99b02ee954bbf304cb5be227e6e09d40, type: 3}
     - target: {fileID: 5797612957777465009, guid: def1100351f5427438a1856455d02794, type: 3}
       propertyPath: m_RootOrder
       value: 3

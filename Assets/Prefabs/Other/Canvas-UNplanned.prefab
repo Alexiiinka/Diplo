@@ -423,8 +423,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 689.61, y: -337.00012}
-  m_SizeDelta: {x: 253.97, y: 92.628}
+  m_AnchoredPosition: {x: 679.6002, y: -337.00012}
+  m_SizeDelta: {x: 233.95, y: 92.628}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6982334638358516456
 CanvasRenderer:
@@ -971,19 +971,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 778493474072831317, guid: e95c41f1722a79d41896ed34e445255f, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1920
+      value: 1458.7566
       objectReference: {fileID: 0}
     - target: {fileID: 778493474072831317, guid: e95c41f1722a79d41896ed34e445255f, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1080
+      value: 851.7701
       objectReference: {fileID: 0}
     - target: {fileID: 778493474072831317, guid: e95c41f1722a79d41896ed34e445255f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.00031281
+      value: 222.5393
       objectReference: {fileID: 0}
     - target: {fileID: 778493474072831317, guid: e95c41f1722a79d41896ed34e445255f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.009552
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3936482102921575408, guid: e95c41f1722a79d41896ed34e445255f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3936482102921575422, guid: e95c41f1722a79d41896ed34e445255f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1011,11 +1015,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3936482102921575423, guid: e95c41f1722a79d41896ed34e445255f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -33.746826
+      value: -158
       objectReference: {fileID: 0}
     - target: {fileID: 3936482102921575423, guid: e95c41f1722a79d41896ed34e445255f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -31.052002
+      value: -48
       objectReference: {fileID: 0}
     - target: {fileID: 6040895608382070933, guid: e95c41f1722a79d41896ed34e445255f, type: 3}
       propertyPath: m_Name
@@ -2220,6 +2224,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748481926417420776}
     m_Modifications:
+    - target: {fileID: 7540800809198581281, guid: 3e29404e2cfd13043b9c5790f870b24c, type: 3}
+      propertyPath: m_text
+      value: '?'
+      objectReference: {fileID: 0}
     - target: {fileID: 7540800810613706214, guid: 3e29404e2cfd13043b9c5790f870b24c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2331,6 +2339,10 @@ PrefabInstance:
     - target: {fileID: 7540800810613706215, guid: 3e29404e2cfd13043b9c5790f870b24c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: UnityEngine.Video.VideoPlayer, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540800810613706215, guid: 3e29404e2cfd13043b9c5790f870b24c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7540800810613706215, guid: 3e29404e2cfd13043b9c5790f870b24c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument

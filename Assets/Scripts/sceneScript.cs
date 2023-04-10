@@ -563,5 +563,15 @@ public class sceneScript : MonoBehaviour
     {
         SceneManager.LoadScene(dalsia);
     }
+
+    public void StisenieMusicVideo()
+    {
+        persistenceScriptVolume.thisAmbientMusic.GetComponent<AudioSource>().volume = 0.04f;
+    }
+
+    public void NaspatHlasitostPoVideu()
+    {
+        persistenceScriptVolume.thisAmbientMusic.GetComponent<AudioSource>().volume = persistenceScript.volume;;
+    }
     
 }

@@ -881,10 +881,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 1279540114}
   AmbientMusic: {fileID: 1201460019}
-  spravnaOdpoved: {x: 4, y: 6}
+  spravnaOdpoved: {x: 3, y: 6}
   fieldX: {fileID: 2129168652}
   fieldY: {fileID: 613840435}
   pocetik: {fileID: 210300607}
+  fontik: {fileID: 0}
+  maly: {fileID: 0}
+  velky: {fileID: 0}
   xAy: 0
   zadajPocet: 1
   urciVzor: 0

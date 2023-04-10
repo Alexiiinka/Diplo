@@ -1421,6 +1421,46 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1789904173}
+    - target: {fileID: 2385551844699632862, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1571682860}
+    - target: {fileID: 2385551844699632862, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1789904173}
+    - target: {fileID: 2385551844699632862, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 2385551844699632862, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: StisenieMusicVideo
+      objectReference: {fileID: 0}
+    - target: {fileID: 2892349699410965789, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1571682860}
+    - target: {fileID: 2892349699410965789, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1571682860}
+    - target: {fileID: 2892349699410965789, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1789904173}
+    - target: {fileID: 2892349699410965789, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Stop
+      objectReference: {fileID: 0}
+    - target: {fileID: 2892349699410965789, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 2892349699410965789, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: StisenieMusicVideo
+      objectReference: {fileID: 0}
     - target: {fileID: 3129297163745624455, guid: 00870e021e4ddd840818930039d3816c, type: 3}
       propertyPath: m_SizeDelta.y
       value: 681.92
@@ -1531,10 +1571,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4454689874124316628, guid: 00870e021e4ddd840818930039d3816c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4454689874124316628, guid: 00870e021e4ddd840818930039d3816c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4454689874124316628, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4454689874124316628, guid: 00870e021e4ddd840818930039d3816c, type: 3}
@@ -1542,7 +1586,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1571682860}
     - target: {fileID: 4454689874124316628, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1789904173}
+    - target: {fileID: 4454689874124316628, guid: 00870e021e4ddd840818930039d3816c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4454689874124316628, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4454689874124316628, guid: 00870e021e4ddd840818930039d3816c, type: 3}
@@ -1550,11 +1602,75 @@ PrefabInstance:
       value: Stop
       objectReference: {fileID: 0}
     - target: {fileID: 4454689874124316628, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: NaspatHlasitostPoVideu
+      objectReference: {fileID: 0}
+    - target: {fileID: 4454689874124316628, guid: 00870e021e4ddd840818930039d3816c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: UnityEngine.Video.VideoPlayer, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4454689874124316628, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: sceneScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4454689874124316628, guid: 00870e021e4ddd840818930039d3816c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4454689874124316628, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089198260668172424, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089198260668172424, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089198260668172424, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1571682860}
+    - target: {fileID: 5089198260668172424, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1789904173}
+    - target: {fileID: 5089198260668172424, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1496388049}
+    - target: {fileID: 5089198260668172424, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089198260668172424, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089198260668172424, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089198260668172424, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: StisenieMusicVideo
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089198260668172424, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: set_enabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089198260668172424, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UnityEngine.Behaviour, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089198260668172424, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089198260668172424, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5638178851517634352, guid: 00870e021e4ddd840818930039d3816c, type: 3}
@@ -1597,6 +1713,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 6387968802079081663, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7863917300685363132, guid: 00870e021e4ddd840818930039d3816c, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 862.8
@@ -1612,6 +1732,14 @@ PrefabInstance:
     - target: {fileID: 7863917300685363133, guid: 00870e021e4ddd840818930039d3816c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RestartScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 8882592666247464352, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1571682860}
+    - target: {fileID: 8882592666247464352, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Pause
       objectReference: {fileID: 0}
     - target: {fileID: 8908694678611104785, guid: 00870e021e4ddd840818930039d3816c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -1724,6 +1852,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1496388049 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5089198260668172424, guid: 00870e021e4ddd840818930039d3816c, type: 3}
+  m_PrefabInstance: {fileID: 1495597495}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1571682859
 GameObject:
   m_ObjectHideFlags: 0
@@ -1766,7 +1905,7 @@ VideoPlayer:
   - {fileID: 0}
   m_DirectAudioVolumes:
   - 1
-  m_Url: file://C:/Users/sasen/Desktop/YT/Sk/CC_Audio.mp4
+  m_Url: https://alexiiinka.github.io/Videa/Level6Hotof.mp4
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
